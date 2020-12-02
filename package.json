@@ -1,0 +1,26 @@
+{
+  "name": "portfolio_design_one",
+  "version": "1.0.0",
+  "description": "First portfolio desig.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnriOv/Portfolio_Design_One.git"
+  },
+  "author": "Enrique Orrantia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EnriOv/Portfolio_Design_One/issues"
+  },
+  "homepage": "https://github.com/EnriOv/Portfolio_Design_One#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
