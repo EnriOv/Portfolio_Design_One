@@ -3,3 +3,86 @@
 @import './_colors';
 @import './_fonts';
 @import './_typography';
+
+body {
+    background-color: $main_background;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero_bg {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1.5fr 1fr 2.5fr;
+    background-image: url('../img/home/city.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    nav {
+        grid-area: 1 / 1 / 2 / 6;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr;
+        margin-top: 1em;
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $logo_font_color;
+        }
+
+        .contact {
+            grid-area: 1 / 4 / 2 / 5;
+            justify-self: end; 
+        }
+
+        button {
+            @extend %contact_button_font;
+            background-color: $but_contact_color;
+            border: none;
+            margin: 0;
+            padding: 0 1em 0 1em;
+            outline: none;
+            cursor: pointer;
+        }
+        
+    }
+
+    h1 {
+        @extend %main_title_font;
+        grid-area: 2 / 2 / 3 / 5;
+        background-color: $title_section;
+        margin: 0;
+        padding: 1.3em 1.2em 1.2em 1.7em;
+    }
+
+    ul {
+        grid-area: 3 / 2 / 4 / 5;
+        list-style: none;
+        justify-self: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 0;
+        transform: translate(0, -15px);
+
+        .degree {
+            @extend %degree_title_font;
+            background-color: $degree;
+            padding: 0.3em 0 0.3em 0;
+            width: 12em;
+        }
+
+        button {
+            @extend %buttons_info_font;
+            background-color: $but_info_color;
+            border: none;
+            margin: 0;
+            padding: 0.3em 0 0.3em 0;
+            width: 12em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

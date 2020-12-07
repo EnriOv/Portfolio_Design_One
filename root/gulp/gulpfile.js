@@ -80,5 +80,5 @@ gulp.task('release', gulp.parallel(['message', 'copyHtml', 'imageMin', 'sass', '
 
 gulp.task('watch_dev', function(){
   gulp.watch(['../js/*.js', '!../js/mainFunctions.js'], gulp.series('scripts_dev'));
-  gulp.watch('../sass/*.scss', gulp.series('sass_dev'));
+  gulp.watch('../scss/*.scss', gulp.series('sass_dev'));
 });
