@@ -1,12 +1,13 @@
 /* Open sans font style */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 /* Montserrat fonts styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-.hero_bg h1, .hero_bg nav .logo, .hero_bg nav button {
+.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .about_me .about_info {
   font-family: 'Montserrat', sans-serif;
   color: #FFF; }
 
-.hero_bg ul .degree, .hero_bg ul button {
+.hero_bg .degree, .hero_bg ul button {
   font-family: 'Open Sans', sans-serif;
   color: #FFF; }
 
@@ -16,7 +17,7 @@
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg nav .logo {
+.hero_bg .logo {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
@@ -26,12 +27,22 @@
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg ul .degree {
+.hero_bg .degree {
   font-size: 1rem;
   text-align: center;
   letter-spacing: 0.01em; }
 
 .hero_bg ul button {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.about_me h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.about_me .about_info {
   font-size: 1rem;
   text-align: center;
   letter-spacing: 0.01em; }
@@ -46,7 +57,7 @@ body {
   height: 50vh;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 1.5fr 1fr 2.5fr;
-  background-image: url("../img/home/city.jpg");
+  background-image: url("../img/home/city_edited.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat; }
   .hero_bg nav {
@@ -55,19 +66,19 @@ body {
     grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 1fr;
     margin-top: 1em; }
-    .hero_bg nav .logo {
-      grid-area: 1 / 2 / 2 / 4;
-      color: #13EB29; }
-    .hero_bg nav .contact {
-      grid-area: 1 / 4 / 2 / 5;
-      justify-self: end; }
-    .hero_bg nav button {
-      background-color: transparent;
-      border: none;
-      margin: 0;
-      padding: 0 1em 0 1em;
-      outline: none;
-      cursor: pointer; }
+  .hero_bg .logo {
+    grid-area: 1 / 2 / 2 / 4;
+    color: #13EB29; }
+  .hero_bg .contact {
+    grid-area: 1 / 4 / 2 / 5;
+    justify-self: end; }
+  .hero_bg nav button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 1em 0 1em;
+    outline: none;
+    cursor: pointer; }
   .hero_bg h1 {
     grid-area: 2 / 2 / 3 / 5;
     background-color: #02213F;
@@ -82,15 +93,25 @@ body {
     text-align: center;
     font-size: 0;
     transform: translate(0, -15px); }
-    .hero_bg ul .degree {
-      background-color: #163859;
-      padding: 0.3em 0 0.3em 0;
-      width: 12em; }
-    .hero_bg ul button {
-      background-color: transparent;
-      border: none;
-      margin: 0;
-      padding: 0.3em 0 0.3em 0;
-      width: 12em;
-      text-decoration: none;
-      cursor: pointer; }
+  .hero_bg .degree {
+    background-color: #163859;
+    padding: 0.3em 0 0.3em 0;
+    width: 12em; }
+  .hero_bg ul button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0.3em 0 0.3em 0;
+    width: 12em;
+    text-decoration: none;
+    cursor: pointer; }
+
+.about_me {
+  background-color: #02213F; }
+  .about_me h2 {
+    margin: 0;
+    padding: 1em 0;
+    color: #13EB29; }
+  .about_me .about_info {
+    margin: 0 2.5em;
+    padding-bottom: 1.5em; }
