@@ -5,10 +5,18 @@ $degree_title_font_size : 1.0rem;
 $button_info_font_size : 1.0rem;
 $about_me_title_font_size : 1.1rem;
 $about_me_desc_font_size : 1.0rem;
+$projects_info_font_size : 1.0rem;
+
+%montserrat_regular {
+    font-family: 'Montserrat', sans-serif;
+    color: $default;
+    font-weight: 400;
+}
 
 %montserrat_medium {
     font-family: 'Montserrat', sans-serif;
     color: $default;
+    font-weight: 500;
 }
 
 %open_sans_regular {
@@ -19,7 +27,7 @@ $about_me_desc_font_size : 1.0rem;
 %open_sans_light {
     font-family: 'Open Sans', sans-serif;
     color: $default;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 %main_title_font {
@@ -66,8 +74,19 @@ $about_me_desc_font_size : 1.0rem;
 }
 
 %about_me_desc_font {
-    @extend %montserrat_medium;
+    @extend %open_sans_light;
     font-size: $about_me_desc_font_size;
     text-align: center;
     letter-spacing: 0.01em;
+}
+
+%projects_title_font {
+    @extend %montserrat_medium;
+    font-size: $main_title_font_size;
+    text-align: center;
+}
+
+%project_name_font {
+    @extend %open_sans_regular;
+    font-size: $projects_info_font_size;
 }

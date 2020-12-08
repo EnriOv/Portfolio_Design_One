@@ -91,7 +91,7 @@ body {
 
     h2 {
         margin: 0;
-        padding: 1em 0;
+        padding: 0.8em 0;
         @extend %about_me_title_font;
         color: $subtitle_font_color;
     }
@@ -103,3 +103,42 @@ body {
     }
 }
 
+.projects_title > h2 {
+    @extend %projects_title_font;
+    background-color: $projects_title_bg_color;
+    margin: 0 0 0.5em;
+    padding: 0.5em 0;
+}
+
+.list_projects {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    margin: 0 4.1em;
+}
+
+.list_projects > .project_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image name";
+    margin: 0.5em 0;
+}
+
+.project_container > .img_project {
+    grid-area: image;
+    background-color: $projects_bg_color;
+}
+
+.project_container > .img_project::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+
+.project_container > .name_project {
+    @extend %project_name_font;
+    grid-area: name;
+    background-color: $projects_bg_color;
+    display: flex;
+    align-items: center;
+}
