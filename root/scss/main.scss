@@ -1,5 +1,164 @@
 // Common imports
-@import './_responsive_mixin';
+@import './_responsive_mixins';
 @import './_colors';
 @import './_fonts';
 @import './_typography';
+
+body {
+    background-color: $main_bg_color;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero_bg {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1.5fr 1fr 2.5fr;
+    background-image: url('../img/home/city_edited.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    nav {
+        grid-area: 1 / 1 / 2 / 6;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr;
+        margin-top: 1em;
+    }
+
+    .logo {
+        @extend %logo_font;
+        grid-area: 1 / 2 / 2 / 4;
+        color: $subtitle_font_color;
+    }
+
+    .contact {
+        grid-area: 1 / 4 / 2 / 5;
+        justify-self: end; 
+    }
+
+    nav button {
+        @extend %contact_button_font;
+        background-color: $but_contact_color;
+        border: none;
+        margin: 0;
+        padding: 0 1em 0 1em;
+        outline: none;
+        cursor: pointer;
+    }
+
+    h1 {
+        @extend %main_title_font;
+        grid-area: 2 / 2 / 3 / 5;
+        background-color: $title_section_bg_color;
+        margin: 0;
+        padding: 1.3em 1.2em 1.2em 1.7em;
+    }
+
+    .information {
+        grid-area: 3 / 2 / 4 / 5;
+        list-style: none;
+        justify-self: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 0;
+        transform: translate(0, -15px);
+    }
+
+    .degree {
+        @extend %degree_title_font;
+        background-color: $degree_bg_color;
+        padding: 0.3em 0 0.3em 0;
+        width: 12em;
+    }
+
+    .info_buttons {
+        backdrop-filter: blur(10px);
+    }
+
+    ul button {
+        @extend %buttons_info_font;
+        background-color: $but_info_color;
+        border: none;
+        margin: 0;
+        padding: 0.3em 0 0.3em 0;
+        width: 12em;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.about_me {
+    background-color: $about_me_bg_color;
+
+    h2 {
+        margin: 0;
+        padding: 0.8em 0;
+        @extend %about_me_title_font;
+        color: $subtitle_font_color;
+    }
+
+    .about_info {
+        @extend %about_me_desc_font;
+        margin: 0 2.5em;
+        padding-bottom: 1.5em;
+    }
+}
+
+.projects_title {
+    h2 {
+        @extend %projects_title_font;
+        background-color: $projects_title_bg_color;
+        margin: 0 0 0.5em;
+        padding: 0.5em 0;
+    }
+}
+
+.list_projects {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    margin: 0 4.1em;
+}
+
+.project_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image name";
+    margin: 0.5em 0;
+    border: none;
+
+    .img_project {
+        grid-area: image;
+        position: relative;
+    }
+
+    .img_project::before {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: none;
+    }
+
+    .name_project {
+        @extend %project_name_font;
+        grid-area: name;
+        background-color: $projects_bg_color;
+        color: $project_name_font_color;
+        display: flex;
+        align-items: center;
+        padding-left: 1em;
+    }
+}

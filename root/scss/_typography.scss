@@ -1,0 +1,92 @@
+$main_title_font_size : 1.2rem;
+$logo_font_size: 0.8rem;
+$contact_button_font_size : 0.8rem;
+$degree_title_font_size : 1.0rem;
+$button_info_font_size : 1.0rem;
+$about_me_title_font_size : 1.1rem;
+$about_me_desc_font_size : 1.0rem;
+$projects_info_font_size : 1.0rem;
+
+%montserrat_regular {
+    font-family: 'Montserrat', sans-serif;
+    color: $default;
+    font-weight: 400;
+}
+
+%montserrat_medium {
+    font-family: 'Montserrat', sans-serif;
+    color: $default;
+    font-weight: 500;
+}
+
+%open_sans_regular {
+    font-family: 'Open Sans', sans-serif;
+    color: $default;
+}
+
+%open_sans_light {
+    font-family: 'Open Sans', sans-serif;
+    color: $default;
+    font-weight: 300;
+}
+
+%main_title_font {
+    @extend %montserrat_medium;
+    font-size: $main_title_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%logo_font {
+    @extend %montserrat_medium;
+    font-size: $logo_font_size;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%contact_button_font {
+    @extend %montserrat_medium;
+    font-size: $contact_button_font_size;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%degree_title_font {
+    @extend %open_sans_regular;
+    font-size: $degree_title_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%buttons_info_font {
+    @extend %open_sans_regular;
+    font-size: $button_info_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%about_me_title_font {
+    @extend %montserrat_medium;
+    font-size: $about_me_title_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%about_me_desc_font {
+    @extend %open_sans_light;
+    font-size: $about_me_desc_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%projects_title_font {
+    @extend %montserrat_medium;
+    font-size: $main_title_font_size;
+    text-align: center;
+}
+
+%project_name_font {
+    @extend %open_sans_regular;
+    font-size: $projects_info_font_size;
+}

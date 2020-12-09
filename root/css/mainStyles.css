@@ -1,0 +1,174 @@
+/* Open sans font style */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+/* Montserrat fonts styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
+.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .projects_title h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  font-weight: 500; }
+
+.hero_bg .degree, .hero_bg ul button, .project_container .name_project {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF; }
+
+.about_me .about_info {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  font-weight: 300; }
+
+.hero_bg h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.4em; }
+
+.hero_bg .logo {
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  line-height: 1.4em; }
+
+.hero_bg nav button {
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  line-height: 1.4em; }
+
+.hero_bg .degree {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.hero_bg ul button {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.about_me h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.about_me .about_info {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.01em; }
+
+.projects_title h2 {
+  font-size: 1.2rem;
+  text-align: center; }
+
+.project_container .name_project {
+  font-size: 1rem; }
+
+body {
+  background-color: #112E4A;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0; }
+
+.hero_bg {
+  display: grid;
+  height: 50vh;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1.5fr 1fr 2.5fr;
+  background-image: url("../img/home/city_edited.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+  .hero_bg nav {
+    grid-area: 1 / 1 / 2 / 6;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    margin-top: 1em; }
+  .hero_bg .logo {
+    grid-area: 1 / 2 / 2 / 4;
+    color: #13EB29; }
+  .hero_bg .contact {
+    grid-area: 1 / 4 / 2 / 5;
+    justify-self: end; }
+  .hero_bg nav button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 1em 0 1em;
+    outline: none;
+    cursor: pointer; }
+  .hero_bg h1 {
+    grid-area: 2 / 2 / 3 / 5;
+    background-color: #02213F;
+    margin: 0;
+    padding: 1.3em 1.2em 1.2em 1.7em; }
+  .hero_bg .information {
+    grid-area: 3 / 2 / 4 / 5;
+    list-style: none;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0;
+    transform: translate(0, -15px); }
+  .hero_bg .degree {
+    background-color: #163859;
+    padding: 0.3em 0 0.3em 0;
+    width: 12em; }
+  .hero_bg .info_buttons {
+    backdrop-filter: blur(10px); }
+  .hero_bg ul button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0.3em 0 0.3em 0;
+    width: 12em;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer; }
+
+.about_me {
+  background-color: #02213F; }
+  .about_me h2 {
+    margin: 0;
+    padding: 0.8em 0;
+    color: #13EB29; }
+  .about_me .about_info {
+    margin: 0 2.5em;
+    padding-bottom: 1.5em; }
+
+.projects_title h2 {
+  background-color: #2B9853;
+  margin: 0 0 0.5em;
+  padding: 0.5em 0; }
+
+.list_projects {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+  margin: 0 4.1em; }
+
+.project_container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "image name";
+  margin: 0.5em 0;
+  border: none; }
+  .project_container .img_project {
+    grid-area: image;
+    position: relative; }
+  .project_container .img_project::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%; }
+  .project_container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none; }
+  .project_container .name_project {
+    grid-area: name;
+    background-color: #52AABC;
+    color: #02213F;
+    display: flex;
+    align-items: center;
+    padding-left: 1em; }
