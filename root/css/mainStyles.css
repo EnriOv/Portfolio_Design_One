@@ -4,12 +4,12 @@
 /* Montserrat fonts styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
-.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .projects_title > h2 {
+.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .projects_title h2 {
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   font-weight: 500; }
 
-.hero_bg .degree, .hero_bg ul button, .project_container > .name_project {
+.hero_bg .degree, .hero_bg ul button, .project_container .name_project {
   font-family: 'Open Sans', sans-serif;
   color: #FFF; }
 
@@ -54,11 +54,11 @@
   text-align: center;
   letter-spacing: 0.01em; }
 
-.projects_title > h2 {
+.projects_title h2 {
   font-size: 1.2rem;
   text-align: center; }
 
-.project_container > .name_project {
+.project_container .name_project {
   font-size: 1rem; }
 
 body {
@@ -98,7 +98,7 @@ body {
     background-color: #02213F;
     margin: 0;
     padding: 1.3em 1.2em 1.2em 1.7em; }
-  .hero_bg ul {
+  .hero_bg .information {
     grid-area: 3 / 2 / 4 / 5;
     list-style: none;
     justify-self: center;
@@ -111,6 +111,8 @@ body {
     background-color: #163859;
     padding: 0.3em 0 0.3em 0;
     width: 12em; }
+  .hero_bg .info_buttons {
+    backdrop-filter: blur(10px); }
   .hero_bg ul button {
     background-color: transparent;
     border: none;
@@ -118,6 +120,7 @@ body {
     padding: 0.3em 0 0.3em 0;
     width: 12em;
     text-decoration: none;
+    outline: none;
     cursor: pointer; }
 
 .about_me {
@@ -130,7 +133,7 @@ body {
     margin: 0 2.5em;
     padding-bottom: 1.5em; }
 
-.projects_title > h2 {
+.projects_title h2 {
   background-color: #2B9853;
   margin: 0 0 0.5em;
   padding: 0.5em 0; }
@@ -140,24 +143,32 @@ body {
   grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
   margin: 0 4.1em; }
 
-.list_projects > .project_container {
+.project_container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto;
   grid-template-areas: "image name";
-  margin: 0.5em 0; }
-
-.project_container > .img_project {
-  grid-area: image;
-  background-color: #52AABC; }
-
-.project_container > .img_project::before {
-  content: "";
-  padding-bottom: 100%;
-  display: block; }
-
-.project_container > .name_project {
-  grid-area: name;
-  background-color: #52AABC;
-  display: flex;
-  align-items: center; }
+  margin: 0.5em 0;
+  border: none; }
+  .project_container .img_project {
+    grid-area: image;
+    position: relative; }
+  .project_container .img_project::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%; }
+  .project_container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none; }
+  .project_container .name_project {
+    grid-area: name;
+    background-color: #52AABC;
+    color: #02213F;
+    display: flex;
+    align-items: center;
+    padding-left: 1em; }
