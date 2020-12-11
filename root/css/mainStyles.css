@@ -4,7 +4,8 @@
 /* Montserrat fonts styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
-.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .projects_title h2 {
+/* Fonts */
+.hero_bg h1, .hero_bg .logo, .hero_bg .contact button, .about_me h2, .projects_title h2 {
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   font-weight: 500; }
@@ -18,6 +19,7 @@
   color: #FFF;
   font-weight: 300; }
 
+/* Different fonts sections */
 .hero_bg h1 {
   font-size: 1.2rem;
   text-align: center;
@@ -29,7 +31,7 @@
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg nav button {
+.hero_bg .contact button {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
@@ -51,8 +53,7 @@
 
 .about_me .about_info {
   font-size: 1rem;
-  text-align: center;
-  letter-spacing: 0.01em; }
+  text-align: center; }
 
 .projects_title h2 {
   font-size: 1.2rem;
@@ -68,12 +69,14 @@ body {
 
 .hero_bg {
   display: grid;
+  max-width: 100%;
   height: 50vh;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 1.5fr 1fr 2.5fr;
   background-image: url("../img/home/city_edited.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Responsive design for tablet display */ }
   .hero_bg nav {
     grid-area: 1 / 1 / 2 / 6;
     display: grid;
@@ -86,7 +89,7 @@ body {
   .hero_bg .contact {
     grid-area: 1 / 4 / 2 / 5;
     justify-self: end; }
-  .hero_bg nav button {
+  .hero_bg .contact button {
     background-color: transparent;
     border: none;
     margin: 0;
@@ -107,41 +110,95 @@ body {
     text-align: center;
     font-size: 0;
     transform: translate(0, -15px); }
-  .hero_bg .degree {
-    background-color: #163859;
-    padding: 0.3em 0 0.3em 0;
-    width: 12em; }
   .hero_bg .info_buttons {
     backdrop-filter: blur(10px); }
+  .hero_bg .degree {
+    background-color: #163859;
+    padding: 0.3em 0;
+    width: 12em; }
   .hero_bg ul button {
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0.3em 0 0.3em 0;
+    padding: 0.3em 0;
     width: 12em;
     text-decoration: none;
     outline: none;
     cursor: pointer; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .hero_bg {
+      height: 70vh;
+      background-size: 100% 100%; }
+      .hero_bg .logo {
+        font-size: 1rem; }
+      .hero_bg .contact button {
+        font-size: 1rem; }
+      .hero_bg h1 {
+        font-size: 1.4rem;
+        padding: 1.3em 1.2em 1.6em 1.7em; }
+      .hero_bg .degree {
+        font-size: 1.1rem;
+        padding: 0.6em 0;
+        width: 15em; }
+      .hero_bg ul button {
+        font-size: 1.1rem;
+        padding: 0.6em 0;
+        width: 15em; }
+      .hero_bg .information {
+        transform: translate(0, -24px); } }
 
 .about_me {
-  background-color: #02213F; }
+  position: relative;
+  background-color: #02213F;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
   .about_me h2 {
     margin: 0;
     padding: 0.8em 0;
     color: #13EB29; }
   .about_me .about_info {
-    margin: 0 2.5em;
-    padding-bottom: 1.5em; }
+    margin: 0 3.8em;
+    padding-bottom: 1.5em;
+    line-height: 1.6em; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .about_me h2 {
+      font-size: 1.4rem; }
+    .about_me .about_info {
+      font-size: 1.1rem;
+      line-height: 1.6em;
+      padding-bottom: 1.8em;
+      margin: 0 7.5em; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1920px) {
+    .about_me h2 {
+      font-size: 1.4rem; }
+    .about_me .about_info {
+      padding-bottom: 2em;
+      margin: 0 15em; } }
 
-.projects_title h2 {
-  background-color: #2B9853;
-  margin: 0 0 0.5em;
-  padding: 0.5em 0; }
+.projects_title {
+  position: relative;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+  /* Responsive design for tablet display */ }
+  .projects_title h2 {
+    background-color: #2B9853;
+    margin: 0 0 0.5em;
+    padding: 0.5em 0; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .projects_title h2 {
+      margin: 0 0 0.7em;
+      padding: 0.8em 0;
+      font-size: 1.4rem; } }
 
 .list_projects {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
-  margin: 0 4.1em; }
+  margin: 0 4.1em;
+  /* Responsive design for tablet display */ }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .list_projects {
+      margin: 0 8em; } }
 
 .project_container {
   display: grid;
@@ -149,7 +206,8 @@ body {
   grid-template-rows: auto;
   grid-template-areas: "image name";
   margin: 0.5em 0;
-  border: none; }
+  border: none;
+  /* Responsive design for tablet display */ }
   .project_container .img_project {
     grid-area: image;
     position: relative; }
@@ -172,3 +230,9 @@ body {
     display: flex;
     align-items: center;
     padding-left: 1em; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .project_container {
+      margin: 1em 0; }
+      .project_container .name_project {
+        font-size: 1.1rem;
+        text-align: center; } }
