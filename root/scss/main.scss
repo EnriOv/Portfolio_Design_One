@@ -18,36 +18,46 @@ body {
     grid-template-rows: 1.5fr 1fr 2.5fr;
     background-image: url('../img/home/city_edited.jpg');
     background-size: cover;
-    //background-size: 100% 100%;
     background-repeat: no-repeat;
 
     nav {
-        grid-area: 1 / 1 / 2 / 6;
-        display: grid;
-        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: 1fr;
-        margin-top: 1em;
-    }
+        grid-area: 1 / 2 / 2 / 5;
+        display: block;
 
-    .logo {
-        @extend %logo_font;
-        grid-area: 1 / 2 / 2 / 4;
-        color: $subtitle_font_color;
-    }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: none;
+        }
 
-    .contact {
-        grid-area: 1 / 4 / 2 / 5;
-        justify-self: end; 
-    }
+        li {
+            float: left;
+        }
 
-    .contact button {
-        @extend %contact_button_font;
-        background-color: $but_contact_color;
-        border: none;
-        margin: 0;
-        padding: 0 1em 0 1em;
-        outline: none;
-        cursor: pointer;
+        li a {
+            display: block;
+            color: white;
+            padding: 1em 0;
+            text-decoration: none;
+        }
+
+        .side {
+            float: right;
+        }
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $subtitle_font_color;
+        }
+
+        .contact {
+            @extend %contact_button_font;
+            background-color: $but_contact_color;
+            border: none;
+        }
     }
 
     h1 {
@@ -97,11 +107,11 @@ body {
         height: 70vh;
         background-size: 100% 100%;
 
-        .logo {
+        ul .logo {
             font-size: $nav_tablet_font_size;
         }
 
-        .contact button {
+        ul .contact {
             font-size: $nav_tablet_font_size;
         }
 
@@ -156,9 +166,9 @@ body {
 
         .about_info {
             font-size: $subtext_tablet_font_size;
-            line-height: 1.6em;
+            line-height: 1.5em;
             padding-bottom: 1.8em;
-            margin: 0 7.5em;
+            margin: 0 5.5em;
         }
     }
 
@@ -203,11 +213,12 @@ body {
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
-        margin: 0 8em;
+        margin: 0 5em;
     }
 }
 
 .project_container {
+    background-color: $projects_bg_color;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
@@ -229,30 +240,122 @@ body {
     img {
         position: absolute;
         width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: auto;
+        top: 0;
+        left: 0;
         border: none;
+    }
+
+    .project-info {
+        display: none;
     }
 
     .name_project {
         @extend %project_name_font;
-        grid-area: name;
-        background-color: $projects_bg_color;
         color: $project_name_font_color;
+        grid-area: name;
         display: flex;
+        margin: 0;
+        padding: 0 1em 0 1.5em;
         align-items: center;
-        padding-left: 1em;
+    } 
+
+    h4 {
+        @extend %project_subtitles_font;
+        color: $project_name_font_color;
+        margin: 1em 0.8em 0.8em 0.9em;
+    }
+
+    p {
+        @extend %project_description_font;
+        color: $project_name_font_color;
+        grid-area: info;
+        display: none;
+        margin: 0 1em;
+    }
+
+    .buttons_project {
+        @extend %project_buttons_font;
+        display: none;
+        
+    }
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 0.5em;
+        padding: 0;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    li a {
+        display: block;
+        color: $project_name_font_color;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 1em;
+        width: 5em;
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    li a:hover {
+        background-color: $project_name_font_color;
+        color: $default;
+        border-color: $project_name_font_color;
     }
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
         margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.5em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+        }
+
+        .description {
+            grid-area: description;
+        }
 
         .name_project {
-            font-size: $subtext_tablet_font_size;
+            font-size: $project_name_tablet_font_size;
+            display: block;
+            padding: 0;
+            margin: 0 0.5em 0.5em;
             text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        p {
+            display: block;
+        }
+
+        .buttons_project {
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
         }
     }
-} 
+}

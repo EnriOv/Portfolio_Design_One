@@ -11,10 +11,12 @@
 </head>
 
 <body>
-    <div class="hero_bg">
+    <section class="hero_bg">
         <nav>
-            <div class="logo">First Last Name</div>
-            <div class="contact"><button> Contact </button></div>
+            <ul>
+                <li><a class="logo" href='#'>First Last Name</a></li>
+                <li class="side"><a class="contact" href="#">Contact</a></li>
+            </ul>
         </nav>
 
         <h1>
@@ -29,7 +31,7 @@
                 <li><button class="resume">Resume</button></li>
             </div>
         </ul>
-    </div>
+    </section>
 
     <section class="about_me">
         <h2>
@@ -49,22 +51,48 @@
     <section class="list_projects">
         <div class="project_container">
             <div class="img_project">
-                <img class="img_cover" src="./img/projects/luvly.jpg" alt="">
+                <img class="img_cover" src="./img/projects/luvly.jpg" alt="Project image">
             </div>
-            <div class="name_project">Project name 1</div>
-            <div class="description"></div>
-            <div class="buttons_project"></div>
+            <h3 class="name_project">Project name 1</h3>
+            <div class="project-info">
+                <div class="description">
+                    <h4>Description</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
+                </div>
+
+                <div class="buttons_project">
+                    <ul>
+                        <li><a href="#">Code</a></li>
+                        <li><a href="#">Demo</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <div class="project_container">
             <div class="img_project">
-                <img class="img_cover" src="./img/projects/flamingo.jpg" alt="">
+                <img class="img_cover" src="./img/projects/flamingo.jpg" alt="Project image">
             </div>
-            <div class="name_project">Project name 2</div>
-            <div class="description"></div>
-            <div class="buttons_project"></div>
+            <h3 class="name_project">Project name 2</h3>
+            <div class="project-info">
+                <div class="description">
+                    <h4>Description</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
+                    <h4>Another description</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
+                </div>
+
+                <div class="buttons_project">
+                    <ul>
+                        <li><a href="#">Code</a></li>
+                        <li><a href="#">Demo</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </section>
+
 </body>
 
 </html>

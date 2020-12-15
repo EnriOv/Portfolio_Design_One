@@ -6,7 +6,11 @@ $subtext_phone_font_size: 1.0rem;
 $main_title_tablet_font_size: 1.4rem;
 $about_me_title_tablet_font_size: 1.4rem;
 $nav_tablet_font_size: 1.0rem;
-$subtext_tablet_font_size: 1.1rem;
+$subtext_tablet_font_size: 1.0rem;
+$project_buttons_font_size: 0.9rem;
+$project_subtitles_tablet_font_size: 1rem;
+$project_description_tablet_font_size: 0.9rem;
+$project_name_tablet_font_size: 1rem;
 
 
 /* Fonts */
@@ -92,4 +96,21 @@ $subtext_tablet_font_size: 1.1rem;
 %project_name_font {
     @extend %open_sans_regular;
     font-size: $subtext_phone_font_size;
+    letter-spacing: 0.05em;
+}
+
+%project_buttons_font {
+    @extend %open_sans_light;
+    font-size: $project_buttons_font_size;
+}
+
+%project_subtitles_font {
+    @extend %montserrat_medium;
+    font-size: $project_subtitles_tablet_font_size;
+    font-weight: bold;
+}
+
+%project_description_font {
+    @extend %open_sans_regular;
+    font-size: $project_description_tablet_font_size;
 }

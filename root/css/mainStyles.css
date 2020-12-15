@@ -5,16 +5,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
 /* Fonts */
-.hero_bg h1, .hero_bg .logo, .hero_bg .contact button, .about_me h2, .projects_title h2 {
+.hero_bg h1, .hero_bg nav .logo, .hero_bg nav .contact, .about_me h2, .projects_title h2, .project_container h4 {
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   font-weight: 500; }
 
-.hero_bg .degree, .hero_bg ul button, .project_container .name_project {
+.hero_bg .degree, .hero_bg ul button, .project_container .name_project, .project_container p {
   font-family: 'Open Sans', sans-serif;
   color: #FFF; }
 
-.about_me .about_info {
+.about_me .about_info, .project_container .buttons_project {
   font-family: 'Open Sans', sans-serif;
   color: #FFF;
   font-weight: 300; }
@@ -26,12 +26,12 @@
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg .logo {
+.hero_bg nav .logo {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg .contact button {
+.hero_bg nav .contact {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
@@ -60,7 +60,18 @@
   text-align: center; }
 
 .project_container .name_project {
-  font-size: 1rem; }
+  font-size: 1rem;
+  letter-spacing: 0.05em; }
+
+.project_container .buttons_project {
+  font-size: 0.9rem; }
+
+.project_container h4 {
+  font-size: 1rem;
+  font-weight: bold; }
+
+.project_container p {
+  font-size: 0.9rem; }
 
 body {
   background-color: #112E4A;
@@ -78,24 +89,29 @@ body {
   background-repeat: no-repeat;
   /* Responsive design for tablet display */ }
   .hero_bg nav {
-    grid-area: 1 / 1 / 2 / 6;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: 1fr;
-    margin-top: 1em; }
-  .hero_bg .logo {
-    grid-area: 1 / 2 / 2 / 4;
-    color: #13EB29; }
-  .hero_bg .contact {
-    grid-area: 1 / 4 / 2 / 5;
-    justify-self: end; }
-  .hero_bg .contact button {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0 1em 0 1em;
-    outline: none;
-    cursor: pointer; }
+    grid-area: 1 / 2 / 2 / 5;
+    display: block; }
+    .hero_bg nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: none; }
+    .hero_bg nav li {
+      float: left; }
+    .hero_bg nav li a {
+      display: block;
+      color: white;
+      padding: 1em 0;
+      text-decoration: none; }
+    .hero_bg nav .side {
+      float: right; }
+    .hero_bg nav .logo {
+      grid-area: 1 / 2 / 2 / 4;
+      color: #13EB29; }
+    .hero_bg nav .contact {
+      background-color: transparent;
+      border: none; }
   .hero_bg h1 {
     grid-area: 2 / 2 / 3 / 5;
     background-color: #02213F;
@@ -129,19 +145,19 @@ body {
     .hero_bg {
       height: 70vh;
       background-size: 100% 100%; }
-      .hero_bg .logo {
+      .hero_bg ul .logo {
         font-size: 1rem; }
-      .hero_bg .contact button {
+      .hero_bg ul .contact {
         font-size: 1rem; }
       .hero_bg h1 {
         font-size: 1.4rem;
         padding: 1.3em 1.2em 1.6em 1.7em; }
       .hero_bg .degree {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0.6em 0;
         width: 15em; }
       .hero_bg ul button {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0.6em 0;
         width: 15em; }
       .hero_bg .information {
@@ -166,10 +182,10 @@ body {
     .about_me h2 {
       font-size: 1.4rem; }
     .about_me .about_info {
-      font-size: 1.1rem;
-      line-height: 1.6em;
+      font-size: 1rem;
+      line-height: 1.5em;
       padding-bottom: 1.8em;
-      margin: 0 7.5em; } }
+      margin: 0 5.5em; } }
   @media only screen and (min-width: 1024px) and (max-width: 1920px) {
     .about_me h2 {
       font-size: 1.4rem; }
@@ -198,9 +214,10 @@ body {
   /* Responsive design for tablet display */ }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .list_projects {
-      margin: 0 8em; } }
+      margin: 0 5em; } }
 
 .project_container {
+  background-color: #52AABC;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto;
@@ -218,21 +235,81 @@ body {
   .project_container img {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: auto;
+    top: 0;
+    left: 0;
     border: none; }
+  .project_container .project-info {
+    display: none; }
   .project_container .name_project {
-    grid-area: name;
-    background-color: #52AABC;
     color: #02213F;
+    grid-area: name;
     display: flex;
-    align-items: center;
-    padding-left: 1em; }
+    margin: 0;
+    padding: 0 1em 0 1.5em;
+    align-items: center; }
+  .project_container h4 {
+    color: #02213F;
+    margin: 1em 0.8em 0.8em 0.9em; }
+  .project_container p {
+    color: #02213F;
+    grid-area: info;
+    display: none;
+    margin: 0 1em; }
+  .project_container .buttons_project {
+    display: none; }
+  .project_container ul {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+    padding: 0;
+    overflow: hidden;
+    background-color: none; }
+  .project_container li {
+    display: inline-block; }
+  .project_container li a {
+    display: block;
+    color: #02213F;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 1em;
+    width: 5em;
+    border-style: solid;
+    border-width: 2px; }
+  .project_container li a:hover {
+    background-color: #02213F;
+    color: #FFF;
+    border-color: #02213F; }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .project_container {
-      margin: 1em 0; }
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "image info" "name info";
+      margin: 1em 0;
+      border: none; }
+      .project_container .img_project {
+        margin: 0.5em;
+        align-self: center; }
+      .project_container .project-info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "description" "buttons"; }
+      .project_container .description {
+        grid-area: description; }
       .project_container .name_project {
-        font-size: 1.1rem;
-        text-align: center; } }
+        font-size: 1rem;
+        display: block;
+        padding: 0;
+        margin: 0 0.5em 0.5em;
+        text-align: center;
+        justify-self: center;
+        align-self: top; }
+      .project_container p {
+        display: block; }
+      .project_container .buttons_project {
+        grid-area: buttons;
+        display: block;
+        text-align: center;
+        align-self: end; } }
