@@ -12,6 +12,10 @@ $project_subtitles_tablet_font_size: 1rem;
 $project_description_tablet_font_size: 0.9rem;
 $project_name_tablet_font_size: 1rem;
 
+$main_title_desktop_font_size: 1.6rem;
+$nav_tablet_desktop_size: 1.1rem;
+$subtext_desktop_font_size: 1.2rem;
+$buttons_contact_desktop_font_size: 1.2rem;
 
 /* Fonts */
 %montserrat_regular {
@@ -71,7 +75,7 @@ $project_name_tablet_font_size: 1rem;
     @extend %open_sans_regular;
     font-size: $subtext_phone_font_size;
     text-align: center;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.06em;
 }
 
 %about_me_title_font {

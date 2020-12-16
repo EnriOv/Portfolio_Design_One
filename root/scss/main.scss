@@ -79,10 +79,6 @@ body {
         transform: translate(0, -15px);
     }
 
-    .info_buttons {
-        backdrop-filter: blur(10px);
-    }
-
     .degree {
         @extend %degree_title_font;
         background-color: $degree_bg_color;
@@ -90,16 +86,21 @@ body {
         width: 12em;
     }
 
-    ul button {
-        @extend %buttons_info_font;
-        background-color: $but_info_color;
-        border: none;
-        margin: 0;
-        padding: 0.3em 0;
-        width: 12em;
-        text-decoration: none;
-        outline: none;
-        cursor: pointer;
+    .info_buttons {
+        //grid-area: 2 / 4 / 3 / 5;
+        backdrop-filter: blur(10px);
+
+        button {
+            @extend %buttons_info_font;
+            background-color: $but_info_color;
+            border: none;
+            margin: 0;
+            padding: 0.3em 0;
+            width: 12em;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+        }
     }
 
     /* Responsive design for tablet display */
@@ -120,6 +121,10 @@ body {
             padding: 1.3em 1.2em 1.6em 1.7em;
         }
 
+        .information {
+            transform: translate(0, -24px);
+        }
+
         .degree {
             font-size: $subtext_tablet_font_size;
             padding: 0.6em 0;
@@ -131,9 +136,72 @@ body {
             padding: 0.6em 0;
             width: 15em;
         }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size;
+            padding: 2em 0 1.6em 2.3em;
+            text-align: left;
+            line-height: 1.8em;
+        }
 
         .information {
-            transform: translate(0, -24px);
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(0, -30px);
+        }
+
+        .degree {
+            font-size: $subtext_desktop_font_size;
+            padding: 0.8em 0;
+            width: 12em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            button:not(:last-child) {
+                border-bottom: none; /* Prevent double borders */
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
         }
     }
 }
