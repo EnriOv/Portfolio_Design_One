@@ -4,6 +4,9 @@
 /* Montserrat fonts styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
+/* Font size variables for phone view */
+/* Font size variables for tablet view */
+/* Font size variables for desktop view */
 /* Fonts */
 .hero_bg h1, .hero_bg nav .logo, .hero_bg nav .contact, .about_me h2, .projects_title h2, .project_container h4 {
   font-family: 'Montserrat', sans-serif;
@@ -94,7 +97,7 @@ body {
     display: block; }
     .hero_bg nav ul {
       list-style-type: none;
-      margin: 0;
+      margin: 0.2em 0 0 0;
       padding: 0;
       overflow: hidden;
       background-color: none; }
@@ -112,7 +115,12 @@ body {
       color: #13EB29; }
     .hero_bg nav .contact {
       background-color: transparent;
-      border: none; }
+      border: none;
+      text-align: center;
+      width: 6em; }
+    .hero_bg nav .contact:hover {
+      border-bottom: 0.2em solid #05702D;
+      backdrop-filter: blur(10px); }
   .hero_bg h1 {
     grid-area: 2 / 2 / 3 / 5;
     background-color: #02213F;
@@ -174,7 +182,7 @@ body {
         font-size: 1.1rem; }
       .hero_bg h1 {
         grid-area: 2 / 2 / 3 / 4;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         padding: 2em 0 1.6em 2.3em;
         text-align: left;
         line-height: 1.8em; }
@@ -191,7 +199,7 @@ body {
         width: 100%;
         height: 100%; }
         .hero_bg .info_buttons button {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           text-align: left;
           margin: 0;
           padding-left: 2em;
@@ -255,7 +263,7 @@ body {
       padding: 0.8em 0; } }
   @media only screen and (min-width: 1024px) and (max-width: 1920px) {
     .projects_title h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin: 0 0 0.7em;
       padding: 0.8em 0; } }
 
@@ -270,7 +278,7 @@ body {
       margin: 0 5em; } }
   @media only screen and (min-width: 1024px) and (max-width: 1920px) {
     .list_projects {
-      margin: 0 10em; } }
+      margin: 0 11em; } }
 
 .project_container {
   background-color: #52AABC;
@@ -353,8 +361,6 @@ body {
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         grid-template-areas: "description" "buttons"; }
-      .project_container .description {
-        grid-area: description; }
       .project_container .name_project {
         font-size: 1rem;
         display: block;
@@ -363,6 +369,8 @@ body {
         text-align: center;
         justify-self: center;
         align-self: top; }
+      .project_container .description {
+        grid-area: description; }
       .project_container p {
         display: block; }
       .project_container .buttons_project {
@@ -379,7 +387,7 @@ body {
       margin: 1em 0;
       border: none; }
       .project_container .img_project {
-        margin: 0.5em;
+        margin: 0.8em;
         align-self: center; }
       .project_container .project-info {
         grid-area: info;
@@ -387,20 +395,27 @@ body {
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         grid-template-areas: "description" "buttons"; }
-      .project_container .description {
-        grid-area: description; }
       .project_container .name_project {
-        font-size: 1rem;
+        font-size: 1.2rem;
         display: block;
-        padding: 0;
-        margin: 0 0.5em 0.5em;
+        margin-bottom: 0.8em;
         text-align: center;
         justify-self: center;
         align-self: top; }
+      .project_container .description {
+        grid-area: description; }
+      .project_container h4 {
+        font-size: 1.1rem;
+        margin: 1.2em 0 0.5em 0.9em; }
       .project_container p {
-        display: block; }
+        display: block;
+        font-size: 1rem;
+        margin-right: 5em; }
       .project_container .buttons_project {
+        font-size: 1.1rem;
         grid-area: buttons;
         display: block;
         text-align: center;
-        align-self: end; } }
+        align-self: end; }
+      .project_container ul {
+        margin-bottom: 0.7em; } }

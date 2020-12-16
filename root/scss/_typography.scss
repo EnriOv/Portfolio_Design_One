@@ -1,22 +1,30 @@
+/* Font size variables for phone view */
 $main_title_phone_font_size: 1.2rem;
 $about_me_title_phone_font_size: 1.1rem;
 $nav_phone_font_size: 0.8rem;
-$subtext_phone_font_size: 1.0rem;
+$subtext_phone_font_size: 1rem;
 
+/* Font size variables for tablet view */
 $main_title_tablet_font_size: 1.4rem;
 $about_me_title_tablet_font_size: 1.4rem;
-$nav_tablet_font_size: 1.0rem;
-$subtext_tablet_font_size: 1.0rem;
-$project_buttons_font_size: 0.9rem;
-$project_subtitles_tablet_font_size: 1rem;
-$project_description_tablet_font_size: 0.9rem;
+$nav_tablet_font_size: 1rem;
+$subtext_tablet_font_size: 1rem;
 $project_name_tablet_font_size: 1rem;
+$project_subtitles_tablet_font_size: 1rem;
+$project_buttons_font_size: 0.9rem;
+$project_description_tablet_font_size: 0.9rem;
 
-$main_title_desktop_font_size: 1.6rem;
+/* Font size variables for desktop view */
+$main_title_desktop_font_size: 1.8rem;
 $about_me_title_desktop_font_size: 1.6rem;
 $nav_tablet_desktop_size: 1.1rem;
 $subtext_desktop_font_size: 1.4rem;
-$buttons_contact_desktop_font_size: 1.2rem;
+$buttons_contact_desktop_font_size: 1.3rem;
+$project_name_desktop_font_size: 1.2rem;
+$project_subtitles_desktop_font_size: 1.1rem;
+$project_buttons_desktop_font_size: 1.1rem;
+$project_description_desktop_font_size: 1rem;
+
 
 /* Fonts */
 %montserrat_regular {

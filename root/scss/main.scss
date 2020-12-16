@@ -26,7 +26,7 @@ body {
 
         ul {
             list-style-type: none;
-            margin: 0;
+            margin: 0.2em 0 0 0;
             padding: 0;
             overflow: hidden;
             background-color: none;
@@ -57,6 +57,14 @@ body {
             @extend %contact_button_font;
             background-color: $but_contact_color;
             border: none;
+            text-align: center;
+            width: 6em;
+        }
+
+        .contact:hover {
+            border-bottom: 0.2em solid #05702D;
+            backdrop-filter: blur(10px);
+            //backdrop-filter: brightness(100%);
         }
     }
 
@@ -296,7 +304,7 @@ body {
 
     /* Responsive design for desktop display */
     @include responsive_general() {
-        margin: 0 10em;
+        margin: 0 11em;
     }
 }
 
@@ -360,7 +368,6 @@ body {
     .buttons_project {
         @extend %project_buttons_font;
         display: none;
-        
     }
 
     ul {
@@ -416,10 +423,6 @@ body {
                                  "buttons";
         }
 
-        .description {
-            grid-area: description;
-        }
-
         .name_project {
             font-size: $project_name_tablet_font_size;
             display: block;
@@ -428,6 +431,10 @@ body {
             text-align: center;
             justify-self: center;
             align-self: top;
+        }
+
+        .description {
+            grid-area: description;
         }
 
         p {
@@ -453,7 +460,7 @@ body {
         border: none;
 
         .img_project {
-            margin: 0.5em;
+            margin: 0.8em;
             align-self: center;
         }
 
@@ -466,29 +473,40 @@ body {
                                  "buttons";
         }
 
-        .description {
-            grid-area: description;
-        }
-
         .name_project {
-            font-size: $project_name_tablet_font_size;
+            font-size: $project_name_desktop_font_size;
             display: block;
-            padding: 0;
-            margin: 0 0.5em 0.5em;
+            margin-bottom: 0.8em;
             text-align: center;
             justify-self: center;
             align-self: top;
         }
 
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size;
+            margin: 1.2em 0 0.5em 0.9em;
+        }
+
         p {
             display: block;
+            font-size: $project_description_desktop_font_size;
+            margin-right: 5em;
         }
 
         .buttons_project {
+            font-size: $project_buttons_desktop_font_size;
             grid-area: buttons;
             display: block;
             text-align: center;
             align-self: end;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
         }
     }
 }
