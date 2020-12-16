@@ -243,10 +243,11 @@ body {
     /* Responsive design for desktop display */
     @include responsive_general() {
         h2 {
-            font-size: 1.4rem;
+            font-size: $about_me_title_desktop_font_size;
         }
 
         .about_info {
+            font-size: $subtext_desktop_font_size;
             padding-bottom: 2em;
             margin: 0 15em;
         }
@@ -267,9 +268,18 @@ body {
     /* Responsive design for tablet display */
     @include responsive_tablet() {
         h2 {
+            font-size: $main_title_tablet_font_size;
             margin: 0 0 0.7em;
             padding: 0.8em 0;
-            font-size: $main_title_tablet_font_size;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        h2 {
+            font-size: $main_title_desktop_font_size;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
         }
     }
 }
@@ -282,6 +292,11 @@ body {
     /* Responsive design for tablet display */
     @include responsive_tablet() {
         margin: 0 5em;
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        margin: 0 10em;
     }
 }
 
@@ -379,6 +394,56 @@ body {
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.5em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        .name_project {
+            font-size: $project_name_tablet_font_size;
+            display: block;
+            padding: 0;
+            margin: 0 0.5em 0.5em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        p {
+            display: block;
+        }
+
+        .buttons_project {
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
         display: grid;
         grid-template-columns: 1fr 3fr;
         grid-template-rows: auto auto;
