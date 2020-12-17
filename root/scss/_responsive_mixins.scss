@@ -11,19 +11,7 @@
 }
 
 @mixin responsive_general() {
-    @media only screen and (min-width: 1024px) and (max-width: 1920px) {
-        @content;
-    }
-}
-
-@mixin responsive_large_screen($max_widths) {
-    @media only screen and (max-width: $max_widths) {
-        @content;
-    }
-}
-
-@mixin responsive($min_width, $max_width) {
-    @media only screen and (min-width: $min_width) and (max-width: $max_width) {
+    @media only screen and (min-width: 1024px) {
         @content;
     }
 }
