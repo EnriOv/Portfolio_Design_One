@@ -1,0 +1,17 @@
+@mixin responsive_mobile() {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin responsive_tablet() {
+    @media only screen and (min-width: 767px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsive_general() {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}

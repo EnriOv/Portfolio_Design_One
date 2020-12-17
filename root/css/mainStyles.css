@@ -4,32 +4,37 @@
 /* Montserrat fonts styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
-.hero_bg h1, .hero_bg .logo, .hero_bg nav button, .about_me h2, .projects_title h2 {
+/* Font size variables for phone view */
+/* Font size variables for tablet view */
+/* Font size variables for desktop view */
+/* Fonts */
+.hero_bg h1, .hero_bg nav .logo, .hero_bg nav .contact, .about_me h2, .projects_title h2, .project_container h4 {
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   font-weight: 500; }
 
-.hero_bg .degree, .hero_bg ul button, .project_container .name_project {
+.hero_bg .degree, .hero_bg .info_buttons button, .project_container .name_project, .project_container p {
   font-family: 'Open Sans', sans-serif;
   color: #FFF; }
 
-.about_me .about_info {
+.about_me .about_info, .project_container .buttons_project {
   font-family: 'Open Sans', sans-serif;
   color: #FFF;
   font-weight: 300; }
 
+/* Different fonts sections */
 .hero_bg h1 {
   font-size: 1.2rem;
   text-align: center;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg .logo {
+.hero_bg nav .logo {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
 
-.hero_bg nav button {
+.hero_bg nav .contact {
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
@@ -39,10 +44,10 @@
   text-align: center;
   letter-spacing: 0.01em; }
 
-.hero_bg ul button {
+.hero_bg .info_buttons button {
   font-size: 1rem;
   text-align: center;
-  letter-spacing: 0.01em; }
+  letter-spacing: 0.06em; }
 
 .about_me h2 {
   font-size: 1.1rem;
@@ -51,15 +56,25 @@
 
 .about_me .about_info {
   font-size: 1rem;
-  text-align: center;
-  letter-spacing: 0.01em; }
+  text-align: center; }
 
 .projects_title h2 {
   font-size: 1.2rem;
   text-align: center; }
 
 .project_container .name_project {
-  font-size: 1rem; }
+  font-size: 1rem;
+  letter-spacing: 0.05em; }
+
+.project_container .buttons_project {
+  font-size: 0.9rem; }
+
+.project_container h4 {
+  font-size: 1rem;
+  font-weight: bold; }
+
+.project_container p {
+  font-size: 0.9rem; }
 
 body {
   background-color: #112E4A;
@@ -68,31 +83,44 @@ body {
 
 .hero_bg {
   display: grid;
+  max-width: 100%;
   height: 50vh;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 1.5fr 1fr 2.5fr;
   background-image: url("../img/home/city_edited.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
   .hero_bg nav {
-    grid-area: 1 / 1 / 2 / 6;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: 1fr;
-    margin-top: 1em; }
-  .hero_bg .logo {
-    grid-area: 1 / 2 / 2 / 4;
-    color: #13EB29; }
-  .hero_bg .contact {
-    grid-area: 1 / 4 / 2 / 5;
-    justify-self: end; }
-  .hero_bg nav button {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0 1em 0 1em;
-    outline: none;
-    cursor: pointer; }
+    grid-area: 1 / 2 / 2 / 5;
+    display: block; }
+    .hero_bg nav ul {
+      list-style-type: none;
+      margin: 0.2em 0 0 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: none; }
+    .hero_bg nav li {
+      float: left; }
+    .hero_bg nav li a {
+      display: block;
+      color: white;
+      padding: 1em 0;
+      text-decoration: none; }
+    .hero_bg nav .side {
+      float: right; }
+    .hero_bg nav .logo {
+      grid-area: 1 / 2 / 2 / 4;
+      color: #13EB29; }
+    .hero_bg nav .contact {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      width: 6em; }
+    .hero_bg nav .contact:hover {
+      border-bottom: 0.2em solid #05702D;
+      backdrop-filter: blur(10px); }
   .hero_bg h1 {
     grid-area: 2 / 2 / 3 / 5;
     background-color: #02213F;
@@ -105,51 +133,186 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-size: 0;
     transform: translate(0, -15px); }
   .hero_bg .degree {
     background-color: #163859;
-    padding: 0.3em 0 0.3em 0;
+    padding: 0.3em 0;
     width: 12em; }
   .hero_bg .info_buttons {
-    backdrop-filter: blur(10px); }
-  .hero_bg ul button {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0.3em 0 0.3em 0;
+    grid-area: 3 / 3 / 4 / 4;
+    display: inline;
+    transform: translate(0, 15px);
+    backdrop-filter: blur(10px);
     width: 12em;
-    text-decoration: none;
-    outline: none;
-    cursor: pointer; }
+    height: 8em; }
+    .hero_bg .info_buttons li {
+      display: block; }
+    .hero_bg .info_buttons button {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 33%;
+      text-decoration: none;
+      outline: none;
+      cursor: pointer; }
+    .hero_bg .info_buttons a {
+      color: #FFF;
+      text-decoration: none; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .hero_bg {
+      height: 70vh;
+      background-size: 100% 100%; }
+      .hero_bg ul .logo {
+        font-size: 1rem; }
+      .hero_bg ul .contact {
+        font-size: 1rem; }
+      .hero_bg h1 {
+        font-size: 1.4rem;
+        padding: 1.3em 1.2em 1.6em 1.7em; }
+      .hero_bg .information {
+        transform: translate(0, -24px); }
+      .hero_bg .degree {
+        font-size: 1.1rem;
+        padding: 0.6em 0;
+        width: 15em; }
+      .hero_bg .info_buttons {
+        grid-area: 3 / 3 / 4 / 4;
+        display: inline;
+        transform: translate(0, 20px);
+        backdrop-filter: blur(10px);
+        width: 16.5em;
+        height: 8em; }
+        .hero_bg .info_buttons li {
+          display: block; }
+        .hero_bg .info_buttons button {
+          font-size: 1.1rem;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          display: block;
+          width: 100%;
+          height: 33%; }
+        .hero_bg .info_buttons button:hover {
+          border: 0.2em solid #05702D; } }
+  @media only screen and (min-width: 1024px) {
+    .hero_bg {
+      grid-template-rows: 1.5fr 1.5fr 1.8fr;
+      height: 100vh;
+      background-size: 100% 100%; }
+      .hero_bg ul .logo {
+        font-size: 1.1rem; }
+      .hero_bg ul .contact {
+        font-size: 1.1rem; }
+      .hero_bg h1 {
+        grid-area: 2 / 2 / 3 / 4;
+        font-size: 1.8rem;
+        padding: 2.2em 0.8em 1.6em 2.8em;
+        text-align: left;
+        line-height: 1.8em; }
+      .hero_bg .information {
+        grid-area: 3 / 2 / 4 / 3;
+        transform: translate(0, -30px); }
+      .hero_bg .degree {
+        font-size: 1.5rem;
+        padding: 0.8em 0;
+        width: 14em; }
+      .hero_bg .info_buttons {
+        grid-area: 2 / 4 / 3 / 5;
+        backdrop-filter: blur(10px);
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%; }
+        .hero_bg .info_buttons button {
+          font-size: 1.3rem;
+          text-align: left;
+          margin: 0;
+          padding-left: 2em;
+          display: block;
+          width: 100%;
+          height: 33%; }
+        .hero_bg .info_buttons .linked-in {
+          border-left: 0.2em solid #05702D; }
+        .hero_bg .info_buttons .git-hub {
+          border-left: 0.2em solid #59CC83; }
+        .hero_bg .info_buttons .resume {
+          border-left: 0.2em solid #AFFFCC; } }
 
 .about_me {
-  background-color: #02213F; }
+  position: relative;
+  background-color: #02213F;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
   .about_me h2 {
     margin: 0;
     padding: 0.8em 0;
     color: #13EB29; }
   .about_me .about_info {
-    margin: 0 2.5em;
-    padding-bottom: 1.5em; }
+    margin: 0 4.5em;
+    padding-bottom: 1.5em;
+    line-height: 1.6em; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .about_me h2 {
+      font-size: 1.4rem; }
+    .about_me .about_info {
+      font-size: 1.1rem;
+      line-height: 1.5em;
+      padding-bottom: 1.8em;
+      margin: 0 5.5em; } }
+  @media only screen and (min-width: 1024px) {
+    .about_me h2 {
+      font-size: 1.6rem; }
+    .about_me .about_info {
+      font-size: 1.4rem;
+      padding-bottom: 2em;
+      margin: 0 10em; } }
 
-.projects_title h2 {
-  background-color: #2B9853;
-  margin: 0 0 0.5em;
-  padding: 0.5em 0; }
+.projects_title {
+  position: relative;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
+  .projects_title h2 {
+    background-color: #2B9853;
+    margin: 0 0 0.5em;
+    padding: 0.7em 0; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .projects_title h2 {
+      font-size: 1.4rem;
+      margin: 0 0 0.7em;
+      padding: 0.8em 0; } }
+  @media only screen and (min-width: 1024px) {
+    .projects_title h2 {
+      font-size: 1.8rem;
+      margin: 0 0 0.7em;
+      padding: 0.8em 0; } }
 
 .list_projects {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
-  margin: 0 4.1em; }
+  margin: 0 4.1em;
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .list_projects {
+      margin: 0 6em; } }
+  @media only screen and (min-width: 1024px) {
+    .list_projects {
+      margin: 0 10em; } }
 
 .project_container {
+  background-color: #52AABC;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto;
   grid-template-areas: "image name";
   margin: 0.5em 0;
-  border: none; }
+  border: none;
+  /* Responsive design for tablet display */
+  /* Responsive design for desktop display */ }
   .project_container .img_project {
     grid-area: image;
     position: relative; }
@@ -160,15 +323,123 @@ body {
   .project_container img {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: auto;
+    top: 0;
+    left: 0;
     border: none; }
+  .project_container .project-info {
+    display: none; }
   .project_container .name_project {
-    grid-area: name;
-    background-color: #52AABC;
     color: #02213F;
+    grid-area: name;
     display: flex;
-    align-items: center;
-    padding-left: 1em; }
+    margin: 0;
+    padding: 0 1em 0 1.5em;
+    align-items: center; }
+  .project_container h4 {
+    color: #02213F;
+    margin: 1em 0.8em 0.8em 0.9em; }
+  .project_container p {
+    color: #02213F;
+    grid-area: info;
+    display: none;
+    margin: 0 1em; }
+  .project_container .buttons_project {
+    display: none; }
+  .project_container ul {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+    padding: 0;
+    overflow: hidden;
+    background-color: none; }
+  .project_container li {
+    display: inline-block; }
+  .project_container li a {
+    display: block;
+    color: #02213F;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 1em;
+    width: 5em;
+    border-style: solid;
+    border-width: 2px; }
+  .project_container li a:hover {
+    background-color: #02213F;
+    color: #FFF;
+    border-color: #02213F; }
+  @media only screen and (min-width: 767px) and (max-width: 1024px) {
+    .project_container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "image info" "name info";
+      margin: 1em 0;
+      border: none; }
+      .project_container .img_project {
+        margin: 0.5em;
+        align-self: center; }
+      .project_container .project-info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "description" "buttons"; }
+      .project_container .name_project {
+        font-size: 1rem;
+        display: block;
+        padding: 0;
+        margin: 0 0.5em 0.5em;
+        text-align: center;
+        justify-self: center;
+        align-self: top; }
+      .project_container .description {
+        grid-area: description; }
+      .project_container p {
+        display: block; }
+      .project_container .buttons_project {
+        grid-area: buttons;
+        display: block;
+        text-align: center;
+        align-self: end; } }
+  @media only screen and (min-width: 1024px) {
+    .project_container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "image info" "name info";
+      margin: 1em 0;
+      border: none; }
+      .project_container .img_project {
+        margin: 0.8em;
+        align-self: center; }
+      .project_container .project-info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "description" "buttons";
+        margin-top: 0.6em; }
+      .project_container .name_project {
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 0.8em;
+        text-align: center;
+        justify-self: center;
+        align-self: top; }
+      .project_container .description {
+        grid-area: description; }
+      .project_container h4 {
+        font-size: 1.1rem;
+        margin: 0.8em 0 0.8em 1.8em; }
+      .project_container p {
+        display: block;
+        font-size: 1rem;
+        margin: 0 5em 0 2em; }
+      .project_container .buttons_project {
+        font-size: 1.1rem;
+        grid-area: buttons;
+        display: block;
+        text-align: center;
+        align-self: end; }
+      .project_container ul {
+        margin-bottom: 0.7em; } }

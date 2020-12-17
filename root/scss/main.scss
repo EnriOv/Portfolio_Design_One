@@ -12,40 +12,59 @@ body {
 
 .hero_bg {
     display: grid;
+    max-width: 100%;
     height: 50vh;
     grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 1.5fr 1fr 2.5fr;
     background-image: url('../img/home/city_edited.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
     nav {
-        grid-area: 1 / 1 / 2 / 6;
-        display: grid;
-        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: 1fr;
-        margin-top: 1em;
-    }
+        grid-area: 1 / 2 / 2 / 5;
+        display: block;
 
-    .logo {
-        @extend %logo_font;
-        grid-area: 1 / 2 / 2 / 4;
-        color: $subtitle_font_color;
-    }
+        ul {
+            list-style-type: none;
+            margin: 0.2em 0 0 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: none;
+        }
 
-    .contact {
-        grid-area: 1 / 4 / 2 / 5;
-        justify-self: end; 
-    }
+        li {
+            float: left;
+        }
 
-    nav button {
-        @extend %contact_button_font;
-        background-color: $but_contact_color;
-        border: none;
-        margin: 0;
-        padding: 0 1em 0 1em;
-        outline: none;
-        cursor: pointer;
+        li a {
+            display: block;
+            color: white;
+            padding: 1em 0;
+            text-decoration: none;
+        }
+
+        .side {
+            float: right;
+        }
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $subtitle_font_color;
+        }
+
+        .contact {
+            @extend %contact_button_font;
+            background-color: $but_contact_color;
+            border: none;
+            text-align: center;
+            width: 6em;
+        }
+
+        .contact:hover {
+            border-bottom: 0.2em solid #05702D;
+            backdrop-filter: blur(10px);
+        }
     }
 
     h1 {
@@ -63,57 +82,243 @@ body {
         margin: 0;
         padding: 0;
         text-align: center;
-        font-size: 0;
         transform: translate(0, -15px);
     }
 
     .degree {
         @extend %degree_title_font;
         background-color: $degree_bg_color;
-        padding: 0.3em 0 0.3em 0;
+        padding: 0.3em 0;
         width: 12em;
     }
 
     .info_buttons {
+        grid-area: 3 / 3 / 4 / 4;
+        display: inline;
+        transform: translate(0, 15px);
         backdrop-filter: blur(10px);
+        width: 12em;
+        height: 8em;
+
+        li {
+            display: block;
+        }
+
+        button {
+            @extend %buttons_info_font;
+            background-color: $but_info_color;
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 33%;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        a {
+            color: $default;
+            text-decoration: none;
+        }
     }
 
-    ul button {
-        @extend %buttons_info_font;
-        background-color: $but_info_color;
-        border: none;
-        margin: 0;
-        padding: 0.3em 0 0.3em 0;
-        width: 12em;
-        text-decoration: none;
-        outline: none;
-        cursor: pointer;
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        height: 70vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_font_size;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_font_size;
+        }
+
+        h1 {
+            font-size: $main_title_tablet_font_size;
+            padding: 1.3em 1.2em 1.6em 1.7em;
+        }
+
+        .information {
+            transform: translate(0, -24px);
+        }
+
+        .degree {
+            font-size: $subtext_tablet_font_size;
+            padding: 0.6em 0;
+            width: 15em;
+        }
+
+        .info_buttons {
+            grid-area: 3 / 3 / 4 / 4;
+            display: inline;
+            transform: translate(0, 20px);
+            backdrop-filter: blur(10px);
+            width: 16.5em;
+            height: 8em;
+
+            li {
+                display: block;
+            }
+
+            button {
+                font-size: $buttons_contact_tablet_font_size;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            button:hover {
+                border: 0.2em solid #05702D;
+            }
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size;
+            padding: 2.2em 0.8em 1.6em 2.8em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(0, -30px);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size;
+            padding: 0.8em 0;
+            width: 14em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
     }
 }
 
 .about_me {
+    position: relative;
     background-color: $about_me_bg_color;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
 
     h2 {
+        @extend %about_me_title_font;
         margin: 0;
         padding: 0.8em 0;
-        @extend %about_me_title_font;
         color: $subtitle_font_color;
     }
 
     .about_info {
         @extend %about_me_desc_font;
-        margin: 0 2.5em;
+        margin: 0 4.5em;
         padding-bottom: 1.5em;
+        line-height: 1.6em;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        h2 {
+            font-size: $about_me_title_tablet_font_size;
+        }
+
+        .about_info {
+            font-size: $subtext_tablet_font_size;
+            line-height: 1.5em;
+            padding-bottom: 1.8em;
+            margin: 0 5.5em;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size;
+            padding-bottom: 2em;
+            margin: 0 10em;
+        }
     }
 }
 
 .projects_title {
+    position: relative;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+
     h2 {
         @extend %projects_title_font;
         background-color: $projects_title_bg_color;
         margin: 0 0 0.5em;
-        padding: 0.5em 0;
+        padding: 0.7em 0;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        h2 {
+            font-size: $main_title_tablet_font_size;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        h2 {
+            font-size: $main_title_desktop_font_size;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
     }
 }
 
@@ -121,9 +326,20 @@ body {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
     margin: 0 4.1em;
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        margin: 0 6em;
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        margin: 0 10em;
+    }
 }
 
 .project_container {
+    background-color: $projects_bg_color;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
@@ -145,20 +361,183 @@ body {
     img {
         position: absolute;
         width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: auto;
+        top: 0;
+        left: 0;
         border: none;
+    }
+
+    .project-info {
+        display: none;
     }
 
     .name_project {
         @extend %project_name_font;
-        grid-area: name;
-        background-color: $projects_bg_color;
         color: $project_name_font_color;
+        grid-area: name;
         display: flex;
+        margin: 0;
+        padding: 0 1em 0 1.5em;
         align-items: center;
-        padding-left: 1em;
+    } 
+
+    h4 {
+        @extend %project_subtitles_font;
+        color: $project_name_font_color;
+        margin: 1em 0.8em 0.8em 0.9em;
+    }
+
+    p {
+        @extend %project_description_font;
+        color: $project_name_font_color;
+        grid-area: info;
+        display: none;
+        margin: 0 1em;
+    }
+
+    .buttons_project {
+        @extend %project_buttons_font;
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 0.5em;
+        padding: 0;
+        overflow: hidden;
+        background-color: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    li a {
+        display: block;
+        color: $project_name_font_color;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 1em;
+        width: 5em;
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    li a:hover {
+        background-color: $project_name_font_color;
+        color: $default;
+        border-color: $project_name_font_color;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.5em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+        }
+
+        .name_project {
+            font-size: $project_name_tablet_font_size;
+            display: block;
+            padding: 0;
+            margin: 0 0.5em 0.5em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        p {
+            display: block;
+        }
+
+        .buttons_project {
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
     }
 }

@@ -1,12 +1,34 @@
-$main_title_font_size : 1.2rem;
-$logo_font_size: 0.8rem;
-$contact_button_font_size : 0.8rem;
-$degree_title_font_size : 1.0rem;
-$button_info_font_size : 1.0rem;
-$about_me_title_font_size : 1.1rem;
-$about_me_desc_font_size : 1.0rem;
-$projects_info_font_size : 1.0rem;
+/* Font size variables for phone view */
+$main_title_phone_font_size: 1.2rem;
+$about_me_title_phone_font_size: 1.1rem;
+$nav_phone_font_size: 0.8rem;
+$subtext_phone_font_size: 1rem;
 
+/* Font size variables for tablet view */
+$main_title_tablet_font_size: 1.4rem;
+$about_me_title_tablet_font_size: 1.4rem;
+$nav_tablet_font_size: 1rem;
+$subtext_tablet_font_size: 1.1rem;
+$buttons_contact_tablet_font_size: 1.1rem;
+$project_name_tablet_font_size: 1rem;
+$project_subtitles_tablet_font_size: 1rem;
+$project_buttons_font_size: 0.9rem;
+$project_description_tablet_font_size: 0.9rem;
+
+/* Font size variables for desktop view */
+$main_title_desktop_font_size: 1.8rem;
+$about_me_title_desktop_font_size: 1.6rem;
+$nav_tablet_desktop_size: 1.1rem;
+$subtext_desktop_font_size: 1.4rem;
+$degree_desktop_font_size: 1.5rem;
+$buttons_contact_desktop_font_size: 1.3rem;
+$project_name_desktop_font_size: 1.2rem;
+$project_subtitles_desktop_font_size: 1.1rem;
+$project_buttons_desktop_font_size: 1.1rem;
+$project_description_desktop_font_size: 1rem;
+
+
+/* Fonts */
 %montserrat_regular {
     font-family: 'Montserrat', sans-serif;
     color: $default;
@@ -30,9 +52,10 @@ $projects_info_font_size : 1.0rem;
     font-weight: 300;
 }
 
+/* Different fonts sections */
 %main_title_font {
     @extend %montserrat_medium;
-    font-size: $main_title_font_size;
+    font-size: $main_title_phone_font_size;
     text-align: center;
     letter-spacing: 0.01em;
     line-height: 1.4em;
@@ -40,53 +63,69 @@ $projects_info_font_size : 1.0rem;
 
 %logo_font {
     @extend %montserrat_medium;
-    font-size: $logo_font_size;
+    font-size: $nav_phone_font_size;
     letter-spacing: 0.01em;
     line-height: 1.4em;
 }
 
 %contact_button_font {
     @extend %montserrat_medium;
-    font-size: $contact_button_font_size;
+    font-size: $nav_phone_font_size;
     letter-spacing: 0.01em;
     line-height: 1.4em;
 }
 
 %degree_title_font {
     @extend %open_sans_regular;
-    font-size: $degree_title_font_size;
+    font-size: $subtext_phone_font_size;
     text-align: center;
     letter-spacing: 0.01em;
 }
 
 %buttons_info_font {
     @extend %open_sans_regular;
-    font-size: $button_info_font_size;
+    font-size: $subtext_phone_font_size;
     text-align: center;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.06em;
 }
 
 %about_me_title_font {
     @extend %montserrat_medium;
-    font-size: $about_me_title_font_size;
+    font-size: $about_me_title_phone_font_size;
     text-align: center;
     letter-spacing: 0.01em;
 }
 
 %about_me_desc_font {
     @extend %open_sans_light;
-    font-size: $about_me_desc_font_size;
+    font-size: $subtext_phone_font_size;
     text-align: center;
-    letter-spacing: 0.01em;
 }
 
 %projects_title_font {
     @extend %montserrat_medium;
-    font-size: $main_title_font_size;
+    font-size: $main_title_phone_font_size;
     text-align: center;
 }
 
 %project_name_font {
     @extend %open_sans_regular;
-    font-size: $projects_info_font_size;
+    font-size: $subtext_phone_font_size;
+    letter-spacing: 0.05em;
+}
+
+%project_buttons_font {
+    @extend %open_sans_light;
+    font-size: $project_buttons_font_size;
+}
+
+%project_subtitles_font {
+    @extend %montserrat_medium;
+    font-size: $project_subtitles_tablet_font_size;
+    font-weight: bold;
+}
+
+%project_description_font {
+    @extend %open_sans_regular;
+    font-size: $project_description_tablet_font_size;
 }
