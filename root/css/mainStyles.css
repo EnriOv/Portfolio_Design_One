@@ -133,23 +133,33 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-size: 0;
     transform: translate(0, -15px); }
   .hero_bg .degree {
     background-color: #163859;
     padding: 0.3em 0;
     width: 12em; }
   .hero_bg .info_buttons {
-    backdrop-filter: blur(10px); }
+    grid-area: 3 / 3 / 4 / 4;
+    display: inline;
+    transform: translate(0, 15px);
+    backdrop-filter: blur(10px);
+    width: 12em;
+    height: 8em; }
+    .hero_bg .info_buttons li {
+      display: block; }
     .hero_bg .info_buttons button {
       background-color: transparent;
       border: none;
       margin: 0;
-      padding: 0.3em 0;
-      width: 12em;
+      padding: 0;
+      width: 100%;
+      height: 33%;
       text-decoration: none;
       outline: none;
       cursor: pointer; }
+    .hero_bg .info_buttons a {
+      color: #FFF;
+      text-decoration: none; }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .hero_bg {
       height: 70vh;
@@ -164,13 +174,28 @@ body {
       .hero_bg .information {
         transform: translate(0, -24px); }
       .hero_bg .degree {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 0.6em 0;
         width: 15em; }
-      .hero_bg ul button {
-        font-size: 1rem;
-        padding: 0.6em 0;
-        width: 15em; } }
+      .hero_bg .info_buttons {
+        grid-area: 3 / 3 / 4 / 4;
+        display: inline;
+        transform: translate(0, 20px);
+        backdrop-filter: blur(10px);
+        width: 16.5em;
+        height: 8em; }
+        .hero_bg .info_buttons li {
+          display: block; }
+        .hero_bg .info_buttons button {
+          font-size: 1.1rem;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          display: block;
+          width: 100%;
+          height: 33%; }
+        .hero_bg .info_buttons button:hover {
+          border: 0.2em solid #05702D; } }
   @media only screen and (min-width: 1024px) and (max-width: 1920px) {
     .hero_bg {
       grid-template-rows: 1.5fr 1.5fr 1.8fr;
@@ -183,19 +208,20 @@ body {
       .hero_bg h1 {
         grid-area: 2 / 2 / 3 / 4;
         font-size: 1.8rem;
-        padding: 2em 0 1.6em 2.3em;
+        padding: 2.2em 0.8em 1.6em 2.8em;
         text-align: left;
         line-height: 1.8em; }
       .hero_bg .information {
         grid-area: 3 / 2 / 4 / 3;
         transform: translate(0, -30px); }
       .hero_bg .degree {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         padding: 0.8em 0;
-        width: 12em; }
+        width: 14em; }
       .hero_bg .info_buttons {
         grid-area: 2 / 4 / 3 / 5;
         backdrop-filter: blur(10px);
+        transform: translate(0, 0);
         width: 100%;
         height: 100%; }
         .hero_bg .info_buttons button {
@@ -206,9 +232,6 @@ body {
           display: block;
           width: 100%;
           height: 33%; }
-        .hero_bg .info_buttons button:not(:last-child) {
-          border-bottom: none;
-          /* Prevent double borders */ }
         .hero_bg .info_buttons .linked-in {
           border-left: 0.2em solid #05702D; }
         .hero_bg .info_buttons .git-hub {
@@ -228,14 +251,14 @@ body {
     padding: 0.8em 0;
     color: #13EB29; }
   .about_me .about_info {
-    margin: 0 3.8em;
+    margin: 0 4.5em;
     padding-bottom: 1.5em;
     line-height: 1.6em; }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .about_me h2 {
       font-size: 1.4rem; }
     .about_me .about_info {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.5em;
       padding-bottom: 1.8em;
       margin: 0 5.5em; } }
@@ -245,7 +268,7 @@ body {
     .about_me .about_info {
       font-size: 1.4rem;
       padding-bottom: 2em;
-      margin: 0 15em; } }
+      margin: 0 10em; } }
 
 .projects_title {
   position: relative;
@@ -255,7 +278,7 @@ body {
   .projects_title h2 {
     background-color: #2B9853;
     margin: 0 0 0.5em;
-    padding: 0.5em 0; }
+    padding: 0.7em 0; }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .projects_title h2 {
       font-size: 1.4rem;
@@ -275,10 +298,10 @@ body {
   /* Responsive design for desktop display */ }
   @media only screen and (min-width: 767px) and (max-width: 1024px) {
     .list_projects {
-      margin: 0 5em; } }
+      margin: 0 6em; } }
   @media only screen and (min-width: 1024px) and (max-width: 1920px) {
     .list_projects {
-      margin: 0 11em; } }
+      margin: 0 10em; } }
 
 .project_container {
   background-color: #52AABC;
@@ -394,7 +417,8 @@ body {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto auto;
-        grid-template-areas: "description" "buttons"; }
+        grid-template-areas: "description" "buttons";
+        margin-top: 0.6em; }
       .project_container .name_project {
         font-size: 1.2rem;
         display: block;
@@ -406,11 +430,11 @@ body {
         grid-area: description; }
       .project_container h4 {
         font-size: 1.1rem;
-        margin: 1.2em 0 0.5em 0.9em; }
+        margin: 0.8em 0 0.8em 1.8em; }
       .project_container p {
         display: block;
         font-size: 1rem;
-        margin-right: 5em; }
+        margin: 0 5em 0 2em; }
       .project_container .buttons_project {
         font-size: 1.1rem;
         grid-area: buttons;

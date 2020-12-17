@@ -64,7 +64,6 @@ body {
         .contact:hover {
             border-bottom: 0.2em solid #05702D;
             backdrop-filter: blur(10px);
-            //backdrop-filter: brightness(100%);
         }
     }
 
@@ -83,7 +82,6 @@ body {
         margin: 0;
         padding: 0;
         text-align: center;
-        font-size: 0;
         transform: translate(0, -15px);
     }
 
@@ -95,19 +93,33 @@ body {
     }
 
     .info_buttons {
-        //grid-area: 2 / 4 / 3 / 5;
+        grid-area: 3 / 3 / 4 / 4;
+        display: inline;
+        transform: translate(0, 15px);
         backdrop-filter: blur(10px);
+        width: 12em;
+        height: 8em;
+
+        li {
+            display: block;
+        }
 
         button {
             @extend %buttons_info_font;
             background-color: $but_info_color;
             border: none;
             margin: 0;
-            padding: 0.3em 0;
-            width: 12em;
+            padding: 0;
+            width: 100%;
+            height: 33%;
             text-decoration: none;
             outline: none;
             cursor: pointer;
+        }
+
+        a {
+            color: $default;
+            text-decoration: none;
         }
     }
 
@@ -139,10 +151,31 @@ body {
             width: 15em;
         }
 
-        ul button {
-            font-size: $subtext_tablet_font_size;
-            padding: 0.6em 0;
-            width: 15em;
+        .info_buttons {
+            grid-area: 3 / 3 / 4 / 4;
+            display: inline;
+            transform: translate(0, 20px);
+            backdrop-filter: blur(10px);
+            width: 16.5em;
+            height: 8em;
+
+            li {
+                display: block;
+            }
+
+            button {
+                font-size: $buttons_contact_tablet_font_size;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            button:hover {
+                border: 0.2em solid #05702D;
+            }
         }
     }
 
@@ -163,7 +196,7 @@ body {
         h1 {
             grid-area: 2 / 2 / 3 / 4;
             font-size: $main_title_desktop_font_size;
-            padding: 2em 0 1.6em 2.3em;
+            padding: 2.2em 0.8em 1.6em 2.8em;
             text-align: left;
             line-height: 1.8em;
         }
@@ -174,14 +207,15 @@ body {
         }
 
         .degree {
-            font-size: $subtext_desktop_font_size;
+            font-size: $degree_desktop_font_size;
             padding: 0.8em 0;
-            width: 12em;
+            width: 14em;
         }
 
         .info_buttons {
             grid-area: 2 / 4 / 3 / 5;
             backdrop-filter: blur(10px);
+            transform: translate(0, 0);
             width: 100%;
             height: 100%;
 
@@ -193,10 +227,6 @@ body {
                 display: block;
                 width: 100%;
                 height: 33%;
-            }
-
-            button:not(:last-child) {
-                border-bottom: none; /* Prevent double borders */
             }
 
             .linked-in {
@@ -221,15 +251,15 @@ body {
     z-index: 2;
 
     h2 {
+        @extend %about_me_title_font;
         margin: 0;
         padding: 0.8em 0;
-        @extend %about_me_title_font;
         color: $subtitle_font_color;
     }
 
     .about_info {
         @extend %about_me_desc_font;
-        margin: 0 3.8em;
+        margin: 0 4.5em;
         padding-bottom: 1.5em;
         line-height: 1.6em;
     }
@@ -257,7 +287,7 @@ body {
         .about_info {
             font-size: $subtext_desktop_font_size;
             padding-bottom: 2em;
-            margin: 0 15em;
+            margin: 0 10em;
         }
     }
 }
@@ -270,7 +300,7 @@ body {
         @extend %projects_title_font;
         background-color: $projects_title_bg_color;
         margin: 0 0 0.5em;
-        padding: 0.5em 0;
+        padding: 0.7em 0;
     }
 
     /* Responsive design for tablet display */
@@ -299,12 +329,12 @@ body {
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
-        margin: 0 5em;
+        margin: 0 6em;
     }
 
     /* Responsive design for desktop display */
     @include responsive_general() {
-        margin: 0 11em;
+        margin: 0 10em;
     }
 }
 
@@ -471,6 +501,7 @@ body {
             grid-template-rows: auto auto;
             grid-template-areas: "description"
                                  "buttons";
+            margin-top: 0.6em;
         }
 
         .name_project {
@@ -488,13 +519,13 @@ body {
 
         h4 {
             font-size: $project_subtitles_desktop_font_size;
-            margin: 1.2em 0 0.5em 0.9em;
+            margin: 0.8em 0 0.8em 1.8em;
         }
 
         p {
             display: block;
             font-size: $project_description_desktop_font_size;
-            margin-right: 5em;
+            margin: 0 5em 0 2em;
         }
 
         .buttons_project {
