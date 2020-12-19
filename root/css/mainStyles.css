@@ -97,7 +97,7 @@ body {
     display: block; }
     .hero_bg nav ul {
       list-style-type: none;
-      margin: 0.2em 0 0 0;
+      margin: 0;
       padding: 0;
       overflow: hidden;
       background-color: none; }
@@ -120,7 +120,8 @@ body {
       width: 6em; }
     .hero_bg nav .contact:hover {
       border-bottom: 0.2em solid #05702D;
-      backdrop-filter: blur(10px); }
+      backdrop-filter: blur(10px);
+      background-color: rgba(177, 177, 177, 0.2); }
   .hero_bg h1 {
     grid-area: 2 / 2 / 3 / 5;
     background-color: #02213F;
@@ -157,6 +158,8 @@ body {
       text-decoration: none;
       outline: none;
       cursor: pointer; }
+    .hero_bg .info_buttons button:hover {
+      background-color: rgba(177, 177, 177, 0.2); }
     .hero_bg .info_buttons a {
       color: #FFF;
       text-decoration: none; }
@@ -193,9 +196,7 @@ body {
           padding: 0;
           display: block;
           width: 100%;
-          height: 33%; }
-        .hero_bg .info_buttons button:hover {
-          border: 0.2em solid #05702D; } }
+          height: 33%; } }
   @media only screen and (min-width: 1024px) {
     .hero_bg {
       grid-template-rows: 1.5fr 1.5fr 1.8fr;
@@ -208,7 +209,7 @@ body {
       .hero_bg h1 {
         grid-area: 2 / 2 / 3 / 4;
         font-size: 1.8rem;
-        padding: 2.2em 0.8em 1.6em 2.8em;
+        padding: 1.9em 0.8em 2em 1.2em;
         text-align: left;
         line-height: 1.8em; }
       .hero_bg .information {
@@ -443,3 +444,6 @@ body {
         align-self: end; }
       .project_container ul {
         margin-bottom: 0.7em; } }
+
+.contact-bg {
+  background-color: green; }
