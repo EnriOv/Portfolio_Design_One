@@ -10,6 +10,7 @@ body {
     margin: 0;
 }
 
+/* Design of homepage */
 .hero_bg {
     display: grid;
     max-width: 100%;
@@ -26,7 +27,7 @@ body {
 
         ul {
             list-style-type: none;
-            margin: 0.2em 0 0 0;
+            margin: 0;
             padding: 0;
             overflow: hidden;
             background-color: none;
@@ -64,6 +65,7 @@ body {
         .contact:hover {
             border-bottom: 0.2em solid #05702D;
             backdrop-filter: blur(10px);
+            background-color: rgba(177, 177, 177, 0.2);
         }
     }
 
@@ -115,6 +117,10 @@ body {
             text-decoration: none;
             outline: none;
             cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(177, 177, 177, 0.2);
         }
 
         a {
@@ -172,10 +178,6 @@ body {
                 width: 100%;
                 height: 33%;
             }
-
-            button:hover {
-                border: 0.2em solid #05702D;
-            }
         }
     }
 
@@ -196,7 +198,7 @@ body {
         h1 {
             grid-area: 2 / 2 / 3 / 4;
             font-size: $main_title_desktop_font_size;
-            padding: 2.2em 0.8em 1.6em 2.8em;
+            padding: 1.9em 0.8em 2em 1.2em;
             text-align: left;
             line-height: 1.8em;
         }
@@ -229,6 +231,10 @@ body {
                 height: 33%;
             }
 
+            button:hover {
+                //border: 0.2em solid #05702D;
+            }
+
             .linked-in {
                 border-left: 0.2em solid #05702D;
             }
@@ -259,7 +265,7 @@ body {
 
     .about_info {
         @extend %about_me_desc_font;
-        margin: 0 4.5em;
+        margin: 0 3.5em;
         padding-bottom: 1.5em;
         line-height: 1.6em;
     }
@@ -429,6 +435,11 @@ body {
         border-color: $project_name_font_color;
     }
 
+    li a:active {
+        background-color: $but_project_active_color;
+        border-color: $but_project_active_color;
+    }
+
     /* Responsive design for tablet display */
     @include responsive_tablet() {
         display: grid;
@@ -538,6 +549,213 @@ body {
 
         ul {
             margin-bottom: 0.7em;
+        }
+    }
+}
+
+/* Design of contact page */
+.contact-bg {
+    display: grid;
+    max-width: 100%;
+    height: 100vh;
+    grid-template-columns: 0.5fr 4fr 0.5fr;
+    grid-template-rows: 1fr 80% 1fr;
+    background-image: url("../img/contact/contact-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    nav {
+        grid-area: 1 / 2 / 2 / 3;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: none;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 1em 0;
+            text-decoration: none;
+        }
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $subtitle_font_color;
+        }
+    }
+
+    .contact-container {
+        display: grid;
+        grid-area: 2 / 1 / 3 / 4;
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas: "title title title"
+                             ". input ."
+                             ". button .";
+        background-color: $fill_contact_info_bg_color;
+
+        h1 {
+            @extend %contact_title_font;
+            grid-area: title;
+            text-align: center;
+            align-self: center;
+            color: $contact_title_font_color;
+            font-weight: bold;
+        }
+
+        .input-group {
+            grid-area: input;
+        }
+
+        .input-section {
+            margin: 0.8em 0;
+        }
+
+        input[type=text], textarea {
+            @extend %contact_input_text_font;
+            background-color: $input_text_bg_color;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            resize: none;
+            color: $default;
+        }
+
+        input[type=text] {
+            padding: 1em 0 1em 0.5em;
+            height: 1.8em;
+        }
+
+        textarea {
+            padding: 0.5em;
+            height: 7em;
+        }
+
+        .labels {
+            @extend %contact_labels_font;
+            color: $labels_contact_font_color;
+            margin: 0.5em 0 0 0.2em;
+        }
+
+        .but-send {
+            @extend %contact_send_font;
+            grid-area: button;
+            background-color: $but_send_color;
+            color: $send_but_font_color;
+            border: 2px solid $send_but_border_color;
+            text-align: center;
+            width: 8em;
+            height: 2.2em;
+            justify-self: center;
+            align-self: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .but-send:hover {
+            background-color: $but_send_hover_color;
+            color: $send_but_hover_font_color;
+            outline: none;
+        }
+
+        .but-send:active {
+            outline: none;
+            background-color: $but_send_click_color;
+            border-color: $but_send_click_color;
+        }
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        grid-template-columns: 0.1fr 0.6fr 1fr;
+
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_font_size;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_tablet_font_size;
+            }
+
+            .input-section {
+                margin: 1.2em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_tablet_font_size;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_tablet_font_size;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_tablet_font_size;
+            }
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {    
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size;
+            }
         }
     }
 }
