@@ -97,10 +97,10 @@ body {
     .info_buttons {
         grid-area: 3 / 3 / 4 / 4;
         display: inline;
-        transform: translate(0, 15px);
+        transform: translate(0, 12.8px);
         backdrop-filter: blur(10px);
-        width: 12em;
-        height: 8em;
+        width: 10.8em;
+        height: 80%;
 
         li {
             display: block;
@@ -129,9 +129,56 @@ body {
         }
     }
 
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        h1 {
+            font-size: 1rem;
+            padding: 0.8em 1em 1.2em 1em;
+        }
+
+        .degree {
+            font-size: 0.9rem;
+        }
+
+        .info_buttons {
+            width: 10.8em;
+            height: 70%;
+            transform: translate(0, 12.8px);
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        height: 60vh;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: 1.5fr 40% 2.5fr;
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        .degree {
+            font-size: 0.9rem;
+        }
+
+        .info_buttons {
+            width: 10.8em;
+            height: 70%;
+            transform: translate(0, 12.8px);
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
     /* Responsive design for tablet display */
     @include responsive_tablet() {
-        height: 70vh;
+        height: 100vh;
         background-size: 100% 100%;
 
         ul .logo {
@@ -205,7 +252,7 @@ body {
 
         .information {
             grid-area: 3 / 2 / 4 / 3;
-            transform: translate(0, -30px);
+            transform: translate(0, -2.5em);
         }
 
         .degree {
@@ -231,8 +278,132 @@ body {
                 height: 33%;
             }
 
-            button:hover {
-                //border: 0.2em solid #05702D;
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size*1.3;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size*1.3;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size*1.3;
+            padding: 1.9em 0.8em 2em 1.2em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(0, -3em);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size*1.3;
+            padding: 0.8em 0;
+            width: 12em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size*1.3;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size*1.5;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size*1.5;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size*1.5;
+            padding: 1.9em 0.8em 2em 1.2em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(0, -3.5em);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size*1.5;
+            padding: 0.8em 0;
+            width: 12em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size*1.5;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
             }
 
             .linked-in {
@@ -265,9 +436,25 @@ body {
 
     .about_info {
         @extend %about_me_desc_font;
-        margin: 0 3.5em;
+        margin: 0 2em;
         padding-bottom: 1.5em;
         line-height: 1.6em;
+    }
+
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        .about_info {
+            margin: 0 1em;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        .about_info {
+            margin: 0 2em;
+            font-size: 0.9rem;
+        }
     }
 
     /* Responsive design for tablet display */
@@ -293,7 +480,33 @@ body {
         .about_info {
             font-size: $subtext_desktop_font_size;
             padding-bottom: 2em;
+            margin: 0 7em;
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size*1.3;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size*1.3;
+            padding-bottom: 2em;
             margin: 0 10em;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size*1.5;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size*1.5;
+            padding-bottom: 2em;
+            margin: 0 9em;
         }
     }
 }
@@ -326,12 +539,40 @@ body {
             padding: 0.8em 0;
         }
     }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        h2 {
+            font-size: $main_title_desktop_font_size*1.3;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        h2 {
+            font-size: $main_title_desktop_font_size*1.5;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
 }
 
 .list_projects {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
-    margin: 0 4.1em;
+    margin: 0 2.5em;
+
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        margin: 0 1em;
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        margin: 0 2em;
+    }
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
@@ -341,6 +582,16 @@ body {
     /* Responsive design for desktop display */
     @include responsive_general() {
         margin: 0 10em;
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        margin: 0 14em;
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        margin: 0 16em;
     }
 }
 
@@ -551,6 +802,134 @@ body {
             margin-bottom: 0.7em;
         }
     }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size*1.3;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size*1.3;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size*1.3;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size*1.3;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size*1.5;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size*1.5;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size*1.5;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size*1.5;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        li a {
+            border-width: 3px;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
+    }
 }
 
 /* Design of contact page */
@@ -715,6 +1094,8 @@ body {
                 font-size: $contact_send_button_tablet_font_size;
             }
         }
+
+        
     }
 
     /* Responsive design for desktop display */
@@ -755,6 +1136,90 @@ body {
 
             .but-send {
                 font-size: $contact_send_button_desktop_font_size;
+            }
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size*1.3;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size*1.3;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size*1.3;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size*1.3;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size*1.3;
+            }
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size*1.3;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size*1.5;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size*1.5;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size*1.5;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size*1.5;
             }
         }
     }

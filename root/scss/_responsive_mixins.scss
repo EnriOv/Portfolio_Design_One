@@ -1,5 +1,17 @@
+@mixin responsive_galaxy_fold() {
+    @media only screen and (max-width: 280px) {
+        @content;
+    }
+}
+
+@mixin responsive_small_mobile() {
+    @media only screen and (min-width: 281px) and (max-width: 350px) {
+        @content;
+    }
+}
+
 @mixin responsive_mobile() {
-    @media only screen and (max-width: 767px) {
+    @media only screen and (min-width: 350px) and (max-width: 767px) {
         @content;
     }
 }
@@ -11,7 +23,19 @@
 }
 
 @mixin responsive_general() {
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1024px) and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin responsive_large_desktop() {
+    @media only screen and (min-width: 1600px) and (max-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin responsive_xlarge_desktop() {
+    @media only screen and (min-width: 1920px) {
         @content;
     }
 }
