@@ -603,6 +603,7 @@ body {
     grid-template-areas: "image name";
     margin: 0.5em 0;
     border: none;
+    cursor: pointer;
 
     .img_project {
         grid-area: image;
@@ -634,9 +635,20 @@ body {
         grid-area: name;
         display: flex;
         margin: 0;
-        padding: 0 1em 0 1.5em;
+        padding: 1em 5em 1em 1.5em;
         align-items: center;
-    } 
+    }
+
+    i {
+        grid-area: name;
+        display: flex;
+        justify-self: right;
+        align-items: center;
+        transform: rotate(90deg) translate(3px, 0);;
+        padding-top: 1em;
+        font-size: 2.2rem;
+        color: $main_bg_color;
+    }
 
     h4 {
         @extend %project_subtitles_font;
