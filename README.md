@@ -1,4 +1,4 @@
-# First portofolio web design
+# First portfolio website
 
 # What is it?
 A website made to display different projects and a way to contact the owner.

@@ -734,6 +734,15 @@ body {
             align-self: center;
         }
 
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
         .project-info {
             grid-area: info;
             display: grid;
@@ -782,6 +791,15 @@ body {
         .img_project {
             margin: 0.8em;
             align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
         }
 
         .project-info {
@@ -846,6 +864,15 @@ body {
             align-self: center;
         }
 
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
         .project-info {
             grid-area: info;
             display: grid;
@@ -906,6 +933,15 @@ body {
         .img_project {
             margin: 0.8em;
             align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
         }
 
         .project-info {
