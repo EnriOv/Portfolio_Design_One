@@ -183,6 +183,15 @@ body {
     .hero_bg .info_buttons a {
       color: #FFF;
       text-decoration: none; }
+  .hero_bg i {
+    grid-area: name;
+    display: flex;
+    justify-self: right;
+    align-items: center;
+    transform: rotate(90deg) translate(3px, 0);
+    padding-top: 1em;
+    font-size: 2.2rem;
+    color: #112E4A; }
   @media only screen and (max-width: 280px) {
     .hero_bg h1 {
       font-size: 1rem;
@@ -492,12 +501,11 @@ body {
 .project_container {
   background-color: #52AABC;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-template-areas: "image name";
+  grid-template-areas: "image" "name" "info";
   margin: 0.5em 0;
   border: none;
-  cursor: pointer;
   /* Responsive design for tablet display */
   /* Responsive design for desktop display */
   /* Responsive design for large desktop displays */
@@ -508,42 +516,45 @@ body {
   .project_container .img_project::before {
     content: "";
     display: block;
-    padding-bottom: 100%; }
+    padding-bottom: 40%; }
   .project_container img {
     position: absolute;
-    width: 100%;
+    width: 40%;
     height: auto;
     top: 0;
     left: 0;
+    transform: translate(75%, 0);
     border: none; }
   .project_container .project-info {
-    display: none; }
+    grid-area: info;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "description" "buttons"; }
   .project_container .name_project {
     color: #02213F;
+    font-size: 1rem;
     grid-area: name;
-    display: flex;
     margin: 0;
-    padding: 1em 5em 1em 1.5em;
-    align-items: center; }
-  .project_container i {
-    grid-area: name;
-    display: flex;
-    justify-self: right;
+    padding: 0.4em 0.2em;
     align-items: center;
-    transform: rotate(90deg) translate(3px, 0);
-    padding-top: 1em;
-    font-size: 2.2rem;
-    color: #112E4A; }
+    text-align: center; }
+  .project_container .description {
+    grid-area: description; }
   .project_container h4 {
     color: #02213F;
-    margin: 1em 0.8em 0.8em 0.9em; }
+    margin: 0.2em 0.8em 0.8em 1em;
+    font-size: 0.85rem; }
   .project_container p {
     color: #02213F;
     grid-area: info;
-    display: none;
-    margin: 0 1em; }
+    display: block;
+    margin: 0.5em 1em; }
   .project_container .buttons_project {
-    display: none; }
+    grid-area: buttons;
+    display: block;
+    text-align: center;
+    align-self: end; }
   .project_container ul {
     list-style-type: none;
     margin-bottom: 0.5em;

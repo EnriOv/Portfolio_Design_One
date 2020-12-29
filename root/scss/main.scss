@@ -129,6 +129,17 @@ body {
         }
     }
 
+    i {
+        grid-area: name;
+        display: flex;
+        justify-self: right;
+        align-items: center;
+        transform: rotate(90deg) translate(3px, 0);;
+        padding-top: 1em;
+        font-size: 2.2rem;
+        color: $main_bg_color;
+    }
+
     /* Responsive design for galaxy fold display */
     @include responsive_galaxy_fold() {
         h1 {
@@ -598,12 +609,13 @@ body {
 .project_container {
     background-color: $projects_bg_color;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "image name";
+    grid-template-areas: "image"
+                         "name"
+                         "info";
     margin: 0.5em 0;
     border: none;
-    cursor: pointer;
 
     .img_project {
         grid-area: image;
@@ -613,60 +625,64 @@ body {
     .img_project::before {
         content: "";
         display: block;
-        padding-bottom: 100%;
+        padding-bottom: 40%;
     }
 
     img {
         position: absolute;
-        width: 100%;
+        width: 40%;
         height: auto;
         top: 0;
         left: 0;
+        transform: translate(75%, 0);
         border: none;
     }
 
     .project-info {
-        display: none;
+        grid-area: info;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "description"
+                                "buttons";
     }
 
     .name_project {
         @extend %project_name_font;
         color: $project_name_font_color;
+        font-size: 1rem;
         grid-area: name;
-        display: flex;
         margin: 0;
-        padding: 1em 5em 1em 1.5em;
+        padding: 0.4em 0.2em;
         align-items: center;
+        text-align: center;
     }
 
-    i {
-        grid-area: name;
-        display: flex;
-        justify-self: right;
-        align-items: center;
-        transform: rotate(90deg) translate(3px, 0);;
-        padding-top: 1em;
-        font-size: 2.2rem;
-        color: $main_bg_color;
+    .description {
+        grid-area: description;
     }
 
     h4 {
         @extend %project_subtitles_font;
         color: $project_name_font_color;
-        margin: 1em 0.8em 0.8em 0.9em;
+        margin: 0.2em 0.8em 0.8em 1em;
+        font-size: 0.85rem;
     }
 
     p {
         @extend %project_description_font;
         color: $project_name_font_color;
         grid-area: info;
-        display: none;
-        margin: 0 1em;
+        display: block;
+        margin: 0.5em 1em;
     }
 
     .buttons_project {
         @extend %project_buttons_font;
-        display: none;
+        grid-area: buttons;
+        display: block;
+        text-align: center;
+        align-self: end;
     }
 
     ul {
