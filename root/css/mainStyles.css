@@ -183,6 +183,30 @@ body {
     .hero_bg .info_buttons a {
       color: #FFF;
       text-decoration: none; }
+  .hero_bg i {
+    grid-area: 3 / 3 / 4 / 4;
+    color: #FFF;
+    background-color: rgba(72, 155, 76, 0.534);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-self: center;
+    align-self: end;
+    font-size: 2.5rem;
+    border-radius: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+    cursor: pointer;
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite; }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+  40% {
+    transform: translateY(-30px); }
+  60% {
+    transform: translateY(-15px); } }
   @media only screen and (max-width: 280px) {
     .hero_bg h1 {
       font-size: 1rem;
@@ -243,7 +267,10 @@ body {
           padding: 0;
           display: block;
           width: 100%;
-          height: 33%; } }
+          height: 33%; }
+      .hero_bg i {
+        display: block;
+        font-size: 2.2rem; } }
   @media only screen and (min-width: 1024px) and (max-width: 1600px) {
     .hero_bg {
       grid-template-rows: 1.5fr 1.5fr 1.8fr;
@@ -285,7 +312,9 @@ body {
         .hero_bg .info_buttons .git-hub {
           border-left: 0.2em solid #59CC83; }
         .hero_bg .info_buttons .resume {
-          border-left: 0.2em solid #AFFFCC; } }
+          border-left: 0.2em solid #AFFFCC; }
+      .hero_bg i {
+        display: block; } }
   @media only screen and (min-width: 1600px) and (max-width: 1920px) {
     .hero_bg {
       grid-template-rows: 1.5fr 1.5fr 1.8fr;
@@ -327,7 +356,10 @@ body {
         .hero_bg .info_buttons .git-hub {
           border-left: 0.2em solid #59CC83; }
         .hero_bg .info_buttons .resume {
-          border-left: 0.2em solid #AFFFCC; } }
+          border-left: 0.2em solid #AFFFCC; }
+      .hero_bg i {
+        display: block;
+        font-size: 3rem; } }
   @media only screen and (min-width: 1920px) {
     .hero_bg {
       grid-template-rows: 1.5fr 1.5fr 1.8fr;
@@ -369,7 +401,10 @@ body {
         .hero_bg .info_buttons .git-hub {
           border-left: 0.2em solid #59CC83; }
         .hero_bg .info_buttons .resume {
-          border-left: 0.2em solid #AFFFCC; } }
+          border-left: 0.2em solid #AFFFCC; }
+      .hero_bg i {
+        display: block;
+        font-size: 3.5rem; } }
 
 .about_me {
   position: relative;
@@ -489,12 +524,24 @@ body {
     .list_projects {
       margin: 0 16em; } }
 
+.come-in {
+  transform: translateX(-150px);
+  animation: come-in 0.8s ease forwards; }
+
+.already-visible {
+  transform: translateY(0);
+  animation: none; }
+
+@keyframes come-in {
+  to {
+    transform: translateY(0); } }
+
 .project_container {
   background-color: #52AABC;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-template-areas: "image name";
+  grid-template-areas: "image" "name" "info";
   margin: 0.5em 0;
   border: none;
   /* Responsive design for tablet display */
@@ -507,33 +554,45 @@ body {
   .project_container .img_project::before {
     content: "";
     display: block;
-    padding-bottom: 100%; }
+    padding-bottom: 40%; }
   .project_container img {
     position: absolute;
-    width: 100%;
+    width: 40%;
     height: auto;
     top: 0;
     left: 0;
+    transform: translate(75%, 0);
     border: none; }
   .project_container .project-info {
-    display: none; }
+    grid-area: info;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "description" "buttons"; }
   .project_container .name_project {
     color: #02213F;
+    font-size: 1rem;
     grid-area: name;
-    display: flex;
     margin: 0;
-    padding: 0 1em 0 1.5em;
-    align-items: center; }
+    padding: 0.4em 0.2em;
+    align-items: center;
+    text-align: center; }
+  .project_container .description {
+    grid-area: description; }
   .project_container h4 {
     color: #02213F;
-    margin: 1em 0.8em 0.8em 0.9em; }
+    margin: 0.2em 0.8em 0.8em 1em;
+    font-size: 0.85rem; }
   .project_container p {
     color: #02213F;
     grid-area: info;
-    display: none;
-    margin: 0 1em; }
+    display: block;
+    margin: 0.5em 1em; }
   .project_container .buttons_project {
-    display: none; }
+    grid-area: buttons;
+    display: block;
+    text-align: center;
+    align-self: end; }
   .project_container ul {
     list-style-type: none;
     margin-bottom: 0.5em;
@@ -569,6 +628,11 @@ body {
       .project_container .img_project {
         margin: 0.5em;
         align-self: center; }
+      .project_container .img_project::before {
+        padding-bottom: 100%; }
+      .project_container img {
+        width: 100%;
+        transform: translate(0, 0); }
       .project_container .project-info {
         grid-area: info;
         display: grid;
@@ -585,6 +649,8 @@ body {
         align-self: top; }
       .project_container .description {
         grid-area: description; }
+      .project_container h4 {
+        margin: 0.8em 0.8em 0.5em 1em; }
       .project_container p {
         display: block; }
       .project_container .buttons_project {
@@ -603,6 +669,11 @@ body {
       .project_container .img_project {
         margin: 0.8em;
         align-self: center; }
+      .project_container .img_project::before {
+        padding-bottom: 100%; }
+      .project_container img {
+        width: 100%;
+        transform: translate(0, 0); }
       .project_container .project-info {
         grid-area: info;
         display: grid;
@@ -645,6 +716,11 @@ body {
       .project_container .img_project {
         margin: 0.8em;
         align-self: center; }
+      .project_container .img_project::before {
+        padding-bottom: 100%; }
+      .project_container img {
+        width: 100%;
+        transform: translate(0, 0); }
       .project_container .project-info {
         grid-area: info;
         display: grid;
@@ -687,6 +763,11 @@ body {
       .project_container .img_project {
         margin: 0.8em;
         align-self: center; }
+      .project_container .img_project::before {
+        padding-bottom: 100%; }
+      .project_container img {
+        width: 100%;
+        transform: translate(0, 0); }
       .project_container .project-info {
         grid-area: info;
         display: grid;
