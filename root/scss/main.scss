@@ -130,14 +130,34 @@ body {
     }
 
     i {
-        grid-area: name;
-        display: flex;
-        justify-self: right;
-        align-items: center;
-        transform: rotate(90deg) translate(3px, 0);;
-        padding-top: 1em;
-        font-size: 2.2rem;
-        color: $main_bg_color;
+        grid-area: 3 / 3 / 4 / 4;
+        color: $default;
+        background-color: rgba(72, 155, 76, 0.534);
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-self: center;
+        align-self: end;
+        font-size: 2.5rem;
+        border-radius: 100%;
+        margin-bottom: 0.5em;
+        padding: 0.2em;
+        cursor: pointer;
+
+        -moz-animation: bounce 2s infinite;
+        -webkit-animation: bounce 2s infinite;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-15px);
+        }
     }
 
     /* Responsive design for galaxy fold display */
@@ -237,6 +257,11 @@ body {
                 height: 33%;
             }
         }
+
+        i {
+            display: block;
+            font-size: 2.2rem;
+        }
     }
 
     /* Responsive design for desktop display */
@@ -300,6 +325,10 @@ body {
             .resume {
                 border-left: 0.2em solid #AFFFCC;
             }
+        }
+
+        i {
+            display: block;
         }
     }
 
@@ -365,6 +394,11 @@ body {
                 border-left: 0.2em solid #AFFFCC;
             }
         }
+
+        i {
+            display: block;
+            font-size: 3rem;
+        }
     }
 
     /* Responsive design for extre large desktop displays */
@@ -428,6 +462,11 @@ body {
             .resume {
                 border-left: 0.2em solid #AFFFCC;
             }
+        }
+
+        i {
+            display: block;
+            font-size: 3.5rem;
         }
     }
 }
@@ -606,6 +645,20 @@ body {
     }
 }
 
+.come-in {
+    transform: translateX(-150px);
+    animation: come-in 0.8s ease forwards;
+}
+
+.already-visible {
+    transform: translateY(0);
+    animation: none;
+}
+
+@keyframes come-in {
+    to { transform: translateY(0); }
+}
+
 .project_container {
     background-color: $projects_bg_color;
     display: grid;
@@ -764,6 +817,10 @@ body {
 
         .description {
             grid-area: description;
+        }
+
+        h4 {
+            margin: 0.8em 0.8em 0.5em 1em;
         }
 
         p {
