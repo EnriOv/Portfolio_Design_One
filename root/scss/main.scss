@@ -1201,7 +1201,7 @@ body {
             margin: 0.5em 0 0 0.2em;
         }
 
-        .but-send {
+        .butsend {
             @extend %contact_send_font;
             grid-area: button;
             background-color: $but_send_color;
@@ -1217,13 +1217,13 @@ body {
             cursor: pointer;
         }
 
-        .but-send:hover {
+        .butsend:hover {
             background-color: $but_send_hover_color;
             color: $send_but_hover_font_color;
             outline: none;
         }
 
-        .but-send:active {
+        .butsend:active {
             outline: none;
             background-color: $but_send_click_color;
             border-color: $but_send_click_color;

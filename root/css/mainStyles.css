@@ -21,7 +21,7 @@
   color: #FFF;
   font-weight: 500; }
 
-.hero_bg .degree, .hero_bg .info_buttons button, .project_container .name_project, .project_container p, .project_container .bullet-info, .contact-bg .contact-container input[type=text], .contact-bg .contact-container textarea, .contact-bg .contact-container .but-send {
+.hero_bg .degree, .hero_bg .info_buttons button, .project_container .name_project, .project_container p, .project_container .bullet-info, .contact-bg .contact-container input[type=text], .contact-bg .contact-container textarea, .contact-bg .contact-container .butsend {
   font-family: 'Open Sans', sans-serif;
   color: #FFF; }
 
@@ -93,7 +93,7 @@
 .contact-bg .contact-container h1 {
   font-size: 1.5rem; }
 
-.contact-bg .contact-container .but-send {
+.contact-bg .contact-container .butsend {
   font-size: 0.8rem; }
 
 body {
@@ -906,7 +906,7 @@ body {
     .contact-bg .contact-container .labels {
       color: #C1EDF6;
       margin: 0.5em 0 0 0.2em; }
-    .contact-bg .contact-container .but-send {
+    .contact-bg .contact-container .butsend {
       grid-area: button;
       background-color: transparent;
       color: #C1EDF6;
@@ -919,11 +919,11 @@ body {
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer; }
-    .contact-bg .contact-container .but-send:hover {
+    .contact-bg .contact-container .butsend:hover {
       background-color: #C1EDF6;
       color: #0F202A;
       outline: none; }
-    .contact-bg .contact-container .but-send:active {
+    .contact-bg .contact-container .butsend:active {
       outline: none;
       background-color: #39b3cc;
       border-color: #39b3cc; }
