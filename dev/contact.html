@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="css/mainStyles.css">
+</head>
+<body>
+    <section class="contact-bg">
+        <nav>
+            <ul>
+                <li><a class="logo" href='./index.html'>Enrique Orrantia</a></li>
+            </ul>
+        </nav>
+        <form action="https://getform.io/f/04516ef3-5167-4e78-9fad-54147fca7a56" method="POST" class="contact-container" id="contactform">
+            <h1>Contact me</h1>
+            <div class="input-group">
+                <section class="input-section">
+                    <input type="text" name="name" id="name" autocomplete="off">
+                    <div class="labels">Name</div>
+                </section>
+                <section class="input-section">
+                    <input type="text" name="email" id="email" autocomplete="off">
+                    <div class="labels">Email address</div>
+                </section>
+                <section class="input-section">
+                    <input type="text" name="subject" id="subject" autocomplete="off">
+                    <div class="labels">Subject</div>
+                </section>
+                <section class="input-section">
+                    <textarea name="message" id="message" ></textarea>
+                    <div class="labels">Message</div>
+                </section>
+            </div>
+            <button type="submit" class="butsend">
+                send
+            </button>
+        </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/mainFunctions.js"></script>
+</body>
+</html>

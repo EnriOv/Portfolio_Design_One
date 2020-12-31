@@ -1,0 +1,1402 @@
+// Common imports
+@import './_responsive_mixins';
+@import './_colors';
+@import './_fonts';
+@import './_typography';
+
+body {
+    background-color: $main_bg_color;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+/* Design of homepage */
+.hero_bg {
+    display: grid;
+    max-width: 100%;
+    height: 50vh;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1.5fr 1fr 2.5fr;
+    background-image: url('../img/home/city_edited.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    nav {
+        grid-area: 1 / 2 / 2 / 5;
+        display: block;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: none;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 1em 0;
+            text-decoration: none;
+        }
+
+        .side {
+            float: right;
+        }
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $subtitle_font_color;
+        }
+
+        .contact {
+            @extend %contact_button_font;
+            background-color: $but_contact_color;
+            border: none;
+            text-align: center;
+            width: 6em;
+        }
+
+        .contact:hover {
+            border-bottom: 0.2em solid #05702D;
+            backdrop-filter: blur(10px);
+            background-color: rgba(177, 177, 177, 0.2);
+        }
+    }
+
+    h1 {
+        @extend %main_title_font;
+        font-size: 1rem;
+        grid-area: 2 / 2 / 3 / 5;
+        background-color: $title_section_bg_color;
+        margin: 0;
+        padding: 1.3em 1.2em 1.3em 1.7em;
+    }
+
+    span {
+        font-size: 1.2rem;
+        display: block;
+        color: $subtitle_font_color;
+        font-weight: bold;
+        margin-bottom: 0.4em;
+    }
+
+    .information {
+        grid-area: 3 / 2 / 4 / 5;
+        list-style: none;
+        justify-self: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        transform: translate(0, -15px);
+    }
+
+    .degree {
+        @extend %degree_title_font;
+        background-color: $degree_bg_color;
+        padding: 0.4em;
+        width: 14em;
+    }
+
+    .info_buttons {
+        grid-area: 3 / 3 / 4 / 4;
+        display: inline;
+        transform: translate(0, 15px);
+        backdrop-filter: blur(10px);
+        width: 13.3em;
+        height: 80%;
+
+        li {
+            display: block;
+        }
+
+        button {
+            @extend %buttons_info_font;
+            background-color: $but_info_color;
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 33%;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(177, 177, 177, 0.2);
+        }
+    }
+
+    i {
+        grid-area: 3 / 3 / 4 / 4;
+        color: $default;
+        background-color: rgba(72, 155, 76, 0.534);
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-self: center;
+        align-self: end;
+        font-size: 2.5rem;
+        border-radius: 100%;
+        margin-bottom: 0.5em;
+        padding: 0.2em;
+        cursor: pointer;
+
+        -moz-animation: bounce 2s infinite;
+        -webkit-animation: bounce 2s infinite;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-15px);
+        }
+    }
+
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        h1 {
+            font-size: 0.8rem;
+            padding: 0.8em 1em 1.2em 1em;
+        }
+
+        span {
+            font-size: 1rem;
+            margin-bottom: 0.4em;
+        }
+
+        .degree {
+            font-size: 0.9rem;
+        }
+
+        .info_buttons {
+            width: 13.3em;
+            height: 70%;
+            transform: translate(0, 13.7px);
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        height: 60vh;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: 1.5fr 40% 2.5fr;
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        .degree {
+            font-size: 0.9rem;
+        }
+
+        .info_buttons {
+            width: 10.8em;
+            height: 70%;
+            transform: translate(0, 12.8px);
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_font_size;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_font_size;
+        }
+
+        h1 {
+            font-size: $main_title_tablet_font_size*0.9;
+            padding: 1.3em 1.2em 1.6em 1.7em;
+        }
+
+        span {
+            font-size: $main_title_tablet_font_size;
+            margin-bottom: 0.4em;
+        }
+
+        .information {
+            transform: translate(0, -24px);
+        }
+
+        .degree {
+            font-size: $subtext_tablet_font_size;
+            padding: 0.6em 0;
+            width: 15em;
+        }
+
+        .info_buttons {
+            grid-area: 3 / 3 / 4 / 4;
+            display: inline;
+            transform: translate(0, 20px);
+            backdrop-filter: blur(10px);
+            width: 16.5em;
+            height: 8em;
+
+            li {
+                display: block;
+            }
+
+            button {
+                font-size: $buttons_contact_tablet_font_size;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+        }
+
+        i {
+            display: block;
+            font-size: 2.2rem;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size;
+            padding: 1em 0.8em 2em 1.2em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        span {
+            font-size: 1.8rem;
+            margin-bottom: 0.4em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(1em, -2.5em);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size;
+            padding: 0.8em;
+            width: 14em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
+
+        i {
+            display: block;
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size*1.3;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size*1.3;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size;
+            padding: 1em 0.8em 2em 1.2em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        span {
+            font-size: $main_title_desktop_font_size*1.3;
+            margin-bottom: 0.4em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(2.5em, -3em);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size*1.3;
+            padding: 0.8em;
+            width: 14em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size*1.3;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
+
+        i {
+            display: block;
+            font-size: 3rem;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        grid-template-rows: 1.5fr 1.5fr 1.8fr;
+        height: 100vh;
+        background-size: 100% 100%;
+
+        ul .logo {
+            font-size: $nav_tablet_desktop_size*1.5;
+        }
+
+        ul .contact {
+            font-size: $nav_tablet_desktop_size*1.5;
+        }
+
+        h1 {
+            grid-area: 2 / 2 / 3 / 4;
+            font-size: $main_title_desktop_font_size*1.3;
+            padding: 1.2em 0.8em 2em 1.2em;
+            text-align: left;
+            line-height: 1.8em;
+        }
+
+        span {
+            font-size: $main_title_desktop_font_size*1.5;
+            margin-bottom: 0.2em;
+        }
+
+        .information {
+            grid-area: 3 / 2 / 4 / 3;
+            transform: translate(2.5em, -3.5em);
+        }
+
+        .degree {
+            font-size: $degree_desktop_font_size*1.5;
+            padding: 0.8em;
+            width: 14em;
+        }
+
+        .info_buttons {
+            grid-area: 2 / 4 / 3 / 5;
+            backdrop-filter: blur(10px);
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+
+            button {
+                font-size: $buttons_contact_desktop_font_size*1.5;
+                text-align: left;
+                margin: 0;
+                padding-left: 2em;
+                display: block;
+                width: 100%;
+                height: 33%;
+            }
+
+            .linked-in {
+                border-left: 0.2em solid #05702D;
+            }
+
+            .git-hub {
+                border-left: 0.2em solid #59CC83;
+            }
+
+            .resume {
+                border-left: 0.2em solid #AFFFCC;
+            }
+        }
+
+        i {
+            display: block;
+            font-size: 3.5rem;
+        }
+    }
+}
+
+.about_me {
+    position: relative;
+    background-color: $about_me_bg_color;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+    h2 {
+        @extend %about_me_title_font;
+        margin: 0;
+        padding: 0.8em 0;
+        color: $subtitle_font_color;
+    }
+
+    .about_info {
+        @extend %about_me_desc_font;
+        margin: 0 2em;
+        padding-bottom: 1.5em;
+        line-height: 1.6em;
+    }
+
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        .about_info {
+            margin: 0 1em;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        .about_info {
+            margin: 0 2em;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        h2 {
+            font-size: $about_me_title_tablet_font_size;
+        }
+
+        .about_info {
+            font-size: $subtext_tablet_font_size;
+            line-height: 1.5em;
+            padding-bottom: 1.8em;
+            margin: 0 5.5em;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size;
+            padding-bottom: 2em;
+            margin: 0 8.5em;
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size*1.3;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size*1.3;
+            padding-bottom: 2em;
+            margin: 0 10em;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        h2 {
+            font-size: $about_me_title_desktop_font_size*1.5;
+        }
+
+        .about_info {
+            font-size: $subtext_desktop_font_size*1.5;
+            padding-bottom: 2em;
+            margin: 0 9em;
+        }
+    }
+}
+
+.projects_title {
+    position: relative;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+
+    h2 {
+        @extend %projects_title_font;
+        background-color: $projects_title_bg_color;
+        margin: 0 0 0.5em;
+        padding: 0.7em 0;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        h2 {
+            font-size: $main_title_tablet_font_size;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        h2 {
+            font-size: $main_title_desktop_font_size;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        h2 {
+            font-size: $main_title_desktop_font_size*1.3;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        h2 {
+            font-size: $main_title_desktop_font_size*1.5;
+            margin: 0 0 0.7em;
+            padding: 0.8em 0;
+        }
+    }
+}
+
+.list_projects {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    margin: 0 2.5em;
+
+    /* Responsive design for galaxy fold display */
+    @include responsive_galaxy_fold() {
+        margin: 0 1em;
+    }
+
+    /* Responsive design for small phone display */
+    @include responsive_small_mobile() {
+        margin: 0 2em;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        margin: 0 3em;
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        margin: 0 10em;
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        margin: 0 14em;
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        margin: 0 16em;
+    }
+}
+
+.come-in {
+    transform: translateX(-150px);
+    animation: come-in 0.8s ease forwards;
+}
+
+.already-visible {
+    transform: translateY(0);
+    animation: none;
+}
+
+@keyframes come-in {
+    to { transform: translateY(0); }
+}
+
+.project_container {
+    background-color: $projects_bg_color;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "image"
+                         "name"
+                         "info";
+    margin: 0.5em 0;
+    border: none;
+
+    .img_project {
+        grid-area: image;
+        position: relative;
+    }
+
+    .img_project::before {
+        content: "";
+        display: block;
+        padding-bottom: 40%;
+    }
+
+    img {
+        position: absolute;
+        width: 40%;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: translate(75%, 0);
+        border: none;
+    }
+
+    .project-info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "description"
+                                "buttons";
+    }
+
+    .name_project {
+        @extend %project_name_font;
+        color: $project_name_font_color;
+        font-size: 1rem;
+        grid-area: name;
+        margin: 0;
+        padding: 0.4em 0.2em;
+        align-items: center;
+        text-align: center;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    h4 {
+        @extend %project_subtitles_font;
+        color: $project_name_font_color;
+        margin: 0.2em 0.8em 0.8em 1em;
+        font-size: 0.85rem;
+    }
+
+    p {
+        @extend %project_description_font;
+        color: $project_name_font_color;
+        display: block;
+        margin: 0.5em 1em;
+    }
+
+    .buttons_project {
+        @extend %project_buttons_font;
+        grid-area: buttons;
+        display: block;
+        text-align: center;
+        align-self: end;
+    }
+
+    .buttons-list {
+        list-style-type: none;
+        margin-bottom: 0.5em;
+        padding: 0;
+        overflow: hidden;
+        background-color: none;
+
+        li {
+            display: inline-block;
+        }
+    
+        li a {
+            display: block;
+            color: $project_name_font_color;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 1em;
+            width: 5em;
+            border-style: solid;
+            border-width: 2px;
+        }
+    
+        li a:hover {
+            background-color: $project_name_font_color;
+            color: $default;
+            border-color: $project_name_font_color;
+        }
+    
+        li a:active {
+            background-color: $but_project_active_color;
+            border-color: $but_project_active_color;
+        }
+    }
+
+    .bullet-info {
+        @extend %project_description_font;
+        color: $project_name_font_color;
+        list-style-type: square;
+        list-style-position: outside;
+        margin-right: 2em;
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1.5em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.5em;
+            align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+        }
+
+        .name_project {
+            font-size: $project_name_tablet_font_size;
+            display: block;
+            padding: 0;
+            margin: 0 0.5em 0.5em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            margin: 0.8em 0.8em 0.5em 1em;
+        }
+
+        p {
+            display: block;
+        }
+
+        .buttons_project {
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        .bullet-info {
+            margin: 0 3em 0 -0.6em;
+        }
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size;
+            margin: 0 3em 0 0.6em;
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size*1.3;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size*1.3;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size*1.3;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size*1.3;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size*1.3;
+            margin: 0 3em 0 0.6em;
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "image info"
+                             "name info";
+        margin: 1em 0;
+        border: none;
+
+        .img_project {
+            margin: 0.8em;
+            align-self: center;
+        }
+
+        .img_project::before {
+            padding-bottom: 100%;
+        }
+
+        img {
+            width: 100%;
+            transform: translate(0, 0);
+        }
+
+        .project-info {
+            grid-area: info;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-template-areas: "description"
+                                 "buttons";
+            margin-top: 0.6em;
+        }
+
+        .name_project {
+            font-size: $project_name_desktop_font_size*1.5;
+            display: block;
+            margin-bottom: 0.8em;
+            text-align: center;
+            justify-self: center;
+            align-self: top;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        h4 {
+            font-size: $project_subtitles_desktop_font_size*1.5;
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        p {
+            display: block;
+            font-size: $project_description_desktop_font_size*1.5;
+            margin: 0 5em 0 2em;
+        }
+
+        .buttons_project {
+            font-size: $project_buttons_desktop_font_size*1.5;
+            grid-area: buttons;
+            display: block;
+            text-align: center;
+            align-self: end;
+        }
+
+        li a {
+            border-width: 3px;
+        }
+
+        ul {
+            margin-bottom: 0.7em;
+        }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size*1.5;
+            margin: 0 3em 0 0.6em;
+        }
+    }
+}
+
+/* Design of contact page */
+.contact-bg {
+    display: grid;
+    max-width: 100%;
+    height: 100vh;
+    grid-template-columns: 0.5fr 4fr 0.5fr;
+    grid-template-rows: 1fr 80% 1fr;
+    background-image: url("../img/contact/contact-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    nav {
+        grid-area: 1 / 2 / 2 / 3;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: none;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 1em 0;
+            text-decoration: none;
+        }
+
+        .logo {
+            @extend %logo_font;
+            grid-area: 1 / 2 / 2 / 4;
+            color: $subtitle_font_color;
+        }
+    }
+
+    .contact-container {
+        display: grid;
+        grid-area: 2 / 1 / 3 / 4;
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas: "title title title"
+                             ". input ."
+                             ". button .";
+        background-color: $fill_contact_info_bg_color;
+
+        h1 {
+            @extend %contact_title_font;
+            grid-area: title;
+            text-align: center;
+            align-self: center;
+            color: $contact_title_font_color;
+            font-weight: bold;
+        }
+
+        .input-group {
+            grid-area: input;
+        }
+
+        .input-section {
+            margin: 0.8em 0;
+        }
+
+        input[type=text], textarea {
+            @extend %contact_input_text_font;
+            background-color: $input_text_bg_color;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            resize: none;
+            color: $default;
+        }
+
+        input[type=text] {
+            padding: 1em 0 1em 0.5em;
+            height: 1.8em;
+        }
+
+        textarea {
+            padding: 0.5em;
+            height: 7em;
+        }
+
+        .labels {
+            @extend %contact_labels_font;
+            color: $labels_contact_font_color;
+            margin: 0.5em 0 0 0.2em;
+        }
+
+        .butsend {
+            @extend %contact_send_font;
+            grid-area: button;
+            background-color: $but_send_color;
+            color: $send_but_font_color;
+            border: 2px solid $send_but_border_color;
+            text-align: center;
+            width: 8em;
+            height: 2.2em;
+            justify-self: center;
+            align-self: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .butsend:hover {
+            background-color: $but_send_hover_color;
+            color: $send_but_hover_font_color;
+            outline: none;
+        }
+
+        .butsend:active {
+            outline: none;
+            background-color: $but_send_click_color;
+            border-color: $but_send_click_color;
+        }
+    }
+
+    /* Responsive design for tablet display */
+    @include responsive_tablet() {
+        grid-template-columns: 0.1fr 0.6fr 1fr;
+
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_font_size;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_tablet_font_size;
+            }
+
+            .input-section {
+                margin: 1.2em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_tablet_font_size;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_tablet_font_size;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_tablet_font_size;
+            }
+        }
+
+        
+    }
+
+    /* Responsive design for desktop display */
+    @include responsive_general() {    
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size;
+            }
+        }
+    }
+
+    /* Responsive design for large desktop displays */
+    @include responsive_large_desktop() {
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size*1.3;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size*1.3;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size*1.3;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size*1.3;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size*1.3;
+            }
+        }
+    }
+
+    /* Responsive design for extre large desktop displays */
+    @include responsive_xlarge_desktop() {
+        grid-template-columns: 0.1fr 1fr 1fr;
+        
+        nav {
+            grid-area: 1 / 2 / 2 / 3;
+
+            .logo {
+                font-size: $nav_tablet_desktop_size*1.3;
+            }
+        }
+
+        .contact-container {
+            grid-area: 1 / 3 / 4 / 4;
+
+            h1 {
+                font-size: $contact_title_desktop_font_size*1.5;
+            }
+
+            .input-section {
+                margin: 1.5em 0;
+            }
+
+            .labels {
+                font-size: $contact_labels_desktop_font_size*1.5;
+            }
+
+            input[type=text], textarea {
+                font-size: $contact_input_text_desktop_font_size*1.5;
+            }
+
+            textarea {
+                padding: 0.5em;
+                height: 10em;
+            }
+
+            .but-send {
+                font-size: $contact_send_button_desktop_font_size*1.5;
+            }
+        }
+    }
+}

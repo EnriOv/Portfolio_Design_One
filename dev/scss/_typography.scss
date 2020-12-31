@@ -1,0 +1,168 @@
+/* Font size variables for phone view */
+$main_title_phone_font_size: 1.2rem;
+$about_me_title_phone_font_size: 1.1rem;
+$nav_phone_font_size: 0.8rem;
+$subtext_phone_font_size: 0.9rem;
+
+/* Font size variables for tablet view */
+$main_title_tablet_font_size: 1.4rem;
+$about_me_title_tablet_font_size: 1.4rem;
+$nav_tablet_font_size: 1rem;
+$subtext_tablet_font_size: 1.1rem;
+$buttons_contact_tablet_font_size: 1.1rem;
+$project_name_tablet_font_size: 1rem;
+$project_subtitles_tablet_font_size: 1rem;
+$project_buttons_font_size: 0.9rem;
+$project_description_tablet_font_size: 0.9rem;
+
+/* Font size variables for desktop view */
+$main_title_desktop_font_size: 1.7rem;
+$about_me_title_desktop_font_size: 1.6rem;
+$nav_tablet_desktop_size: 1.1rem;
+$subtext_desktop_font_size: 1.4rem;
+$degree_desktop_font_size: 1.5rem;
+$buttons_contact_desktop_font_size: 1.3rem;
+$project_name_desktop_font_size: 1.2rem;
+$project_subtitles_desktop_font_size: 1.1rem;
+$project_buttons_desktop_font_size: 1.1rem;
+$project_description_desktop_font_size: 1rem;
+
+/* Font size variables for contact page phone view */
+$contact_labels_phone_font_size: 0.8rem;
+$contact_title_phone_font_size: 1.5rem;
+$contact_send_button_phone_font_size: 0.8rem;
+$contact_input_text_phone_font_size: 0.9rem;
+
+/* Font size variables for contact page tablet view */
+$contact_labels_tablet_font_size: 0.9rem;
+$contact_title_tablet_font_size: 1.7rem;
+$contact_send_button_tablet_font_size: 0.9rem;
+$contact_input_text_tablet_font_size: 0.9rem;
+
+/* Font size variables for contact page desktop view */
+$contact_labels_desktop_font_size: 1rem;
+$contact_title_desktop_font_size: 1.7rem;
+$contact_send_button_desktop_font_size: 1rem;
+$contact_input_text_desktop_font_size: 1rem;
+
+/* Fonts */
+%montserrat_regular {
+    font-family: 'Montserrat', sans-serif;
+    color: $default;
+    font-weight: 400;
+}
+
+%montserrat_medium {
+    font-family: 'Montserrat', sans-serif;
+    color: $default;
+    font-weight: 500;
+}
+
+%open_sans_regular {
+    font-family: 'Open Sans', sans-serif;
+    color: $default;
+}
+
+%open_sans_light {
+    font-family: 'Open Sans', sans-serif;
+    color: $default;
+    font-weight: 300;
+}
+
+/* Different fonts sections */
+%main_title_font {
+    @extend %montserrat_regular;
+    font-size: $main_title_phone_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%logo_font {
+    @extend %montserrat_medium;
+    font-size: $nav_phone_font_size;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%contact_button_font {
+    @extend %montserrat_medium;
+    font-size: $nav_phone_font_size;
+    letter-spacing: 0.01em;
+    line-height: 1.4em;
+}
+
+%degree_title_font {
+    @extend %open_sans_regular;
+    font-size: $subtext_phone_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%buttons_info_font {
+    @extend %open_sans_regular;
+    font-size: $subtext_phone_font_size;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+
+%about_me_title_font {
+    @extend %montserrat_medium;
+    font-size: $about_me_title_phone_font_size;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+%about_me_desc_font {
+    @extend %open_sans_light;
+    font-size: $subtext_phone_font_size;
+    text-align: center;
+}
+
+%projects_title_font {
+    @extend %montserrat_medium;
+    font-size: $main_title_phone_font_size;
+    text-align: center;
+}
+
+%project_name_font {
+    @extend %open_sans_regular;
+    font-size: $subtext_phone_font_size;
+    letter-spacing: 0.05em;
+}
+
+%project_buttons_font {
+    @extend %open_sans_light;
+    font-size: $project_buttons_font_size;
+}
+
+%project_subtitles_font {
+    @extend %montserrat_medium;
+    font-size: $project_subtitles_tablet_font_size;
+    font-weight: bold;
+}
+
+%project_description_font {
+    @extend %open_sans_regular;
+    font-size: $project_description_tablet_font_size;
+}
+
+%contact_input_text_font {
+    @extend %open_sans_regular;
+    font-size: $contact_input_text_phone_font_size;
+}
+
+%contact_labels_font {
+    @extend %montserrat_medium;
+    font-size: $contact_labels_phone_font_size;
+}
+
+%contact_title_font {
+    @extend %montserrat_medium;
+    font-size: $contact_title_phone_font_size;
+}
+
+%contact_send_font {
+    @extend %open_sans_regular;
+    font-size: $contact_send_button_phone_font_size;
+}
