@@ -1,6 +1,5 @@
 /* Font size variables for phone view */
-//$main_title_phone_font_size: 1.2rem;
-$main_title_phone_font_size: 1.2em;
+$main_title_phone_font_size: 1.2rem;
 $about_me_title_phone_font_size: 1.1rem;
 $nav_phone_font_size: 0.8rem;
 $subtext_phone_font_size: 0.9rem;
@@ -17,7 +16,7 @@ $project_buttons_font_size: 0.9rem;
 $project_description_tablet_font_size: 0.9rem;
 
 /* Font size variables for desktop view */
-$main_title_desktop_font_size: 1.8rem;
+$main_title_desktop_font_size: 1.7rem;
 $about_me_title_desktop_font_size: 1.6rem;
 $nav_tablet_desktop_size: 1.1rem;
 $subtext_desktop_font_size: 1.4rem;
@@ -72,7 +71,7 @@ $contact_input_text_desktop_font_size: 1rem;
 
 /* Different fonts sections */
 %main_title_font {
-    @extend %montserrat_medium;
+    @extend %montserrat_regular;
     font-size: $main_title_phone_font_size;
     text-align: center;
     letter-spacing: 0.01em;

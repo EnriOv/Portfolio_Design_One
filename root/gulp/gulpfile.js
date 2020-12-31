@@ -76,7 +76,7 @@ gulp.task('scripts_dev', function(){
 });
 
 gulp.task('default', gulp.parallel(['message', 'sass_dev', 'scripts_dev']));
-gulp.task('release', gulp.parallel(['message', 'copyHtml', 'imageMin', 'sass', 'scripts']));
+gulp.task('release', gulp.parallel(['copyHtml', 'imageMin', 'sass', 'scripts']));
 
 gulp.task('watch_dev', function(){
   gulp.watch(['../js/*.js', '!../js/mainFunctions.js'], gulp.series('scripts_dev'));
