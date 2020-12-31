@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="css/mainStyles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/mainFunctions.js"></script>
 </head>
@@ -16,28 +17,23 @@
     <section class="hero_bg">
         <nav>
             <ul>
-                <li><a class="logo" href='#'>First Last Name</a></li>
+                <li><a class="logo" href='#'>Enrique Orrantia</a></li>
                 <li class="side"><a class="contact" href="./contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <h1>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            <span>Welcome to my portfolio</span> Feel free to look through the projects and contact me if you have
+            questions, suggestions or job offers
         </h1>
 
         <ul class="information">
-                <li class="degree">Computer scientist</li>
+            <li class="degree">Computer Systems Engineer</li>
         </ul>
         <div class=info_buttons>
-            <button class="linked-in">
-                <a href="#">LinkedIn</a>
-            </button>
-            <button class="git-hub">
-                <a href="#">Github</a>
-            </button>
-            <button class="resume">
-                <a href="#">Resume</a>
-            </button>
+            <button class="linked-in">LinkedIn</button>
+            <button class="git-hub">Github</button>
+            <button class="resume">Resume</button>
         </div>
 
         <i class="material-icons" id="arrow-down">arrow_downward</i>
@@ -49,10 +45,12 @@
             About me
         </h2>
         <p class="about_info">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem asperiores quisquam nobis sit est libero aliquid laudantium voluptatum, laborum maiores quasi quod? Beatae, maxime eos.
+            I’m a curious person always seeking the opportunity to learn and grow personally and in my career.
+            Passionate about what technology can bring. Disciplined and consistent once a goal has been set, always
+            looking to land the best results.
         </p>
     </section>
-    
+
     <section class="projects_title">
         <h2>
             Projects
@@ -62,45 +60,40 @@
     <section class="list_projects">
         <div class="project_container">
             <div class="img_project">
-                <img class="img_cover" src="./img/projects/luvly.jpg" alt="Project image">
+                <img class="img_cover" src="./img/projects/capture-portfolio.PNG" alt="Project image">
             </div>
-            <h3 class="name_project">Project name 1</h3>
+            <h3 class="name_project">First portfolio website</h3>
             <div class="project-info">
                 <div class="description">
-                    <h4>Description</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
+                    <h4>What is it?</h4>
+                    <p>A website made to display different projects and a way to contact the owner.</p>
+                    <h4>What I've learned?</h4>
+                    <ul class="bullet-info">
+                        <li>Learned how to use Adobe XD for the creation of the prototype.</li>
+                        <li>How to use the CSS grid display property.</li>
+                        <li>How to use SASS for the development of the style of the website.</li>
+                        <li>How to use Gulp to automate some repetitive tasks.</li>
+                        <li>Learned how to use jQuery.</li>
+                    </ul>
+                    <h4>Encountered challanges</h4>
+                    <ul class="bullet-info">
+                        <li>
+                            Making the image from the projects section adapt to the window screen while not loosing the
+                            original square shape. This was solved by creating a container for the image, where the
+                            position of the container was kept relative allowing the image to adjust its size depending
+                            of the container. The image position was set to absolute, the height was set to auto to
+                            adjust to the width which was set to 100%.
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="buttons_project">
-                    <ul>
-                        <li><a href="#">Code</a></li>
-                        <li><a href="#">Demo</a></li>
+                    <ul class="buttons-list">
+                        <li><a href="https://github.com/EnriOv/Portfolio_Design_One">Code</a></li>
+                        <li><a href="">Demo</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="project_container">
-            <div class="img_project">
-                <img class="img_cover" src="./img/projects/flamingo.jpg" alt="Project image">
-            </div>
-            <h3 class="name_project">Project name 2</h3>
-            <div class="project-info">
-                <div class="description">
-                    <h4>Description</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
-                    <h4>Another description</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa fugiat dolores adipisci voluptas architecto ab ad, possimus dolorem impedit. Aliquid? </p>
-                </div>
-
-                <div class="buttons_project">
-                    <ul>
-                        <li><a href="#">Code</a></li>
-                        <li><a href="#">Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-            
         </div>
 
     </section>

@@ -54,6 +54,18 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(".linked-in").click(function() {
+        window.open("https://www.linkedin.com/in/enrique-orrantia-87a60118b/");
+    });
+
+    $(".git-hub").click(function() {
+        window.open("https://github.com/EnriOv");
+    });
+
+    $(".resume").click(function() {
+        window.open("//#endregion");
+    });
 });
 
 function clearSubmit() {

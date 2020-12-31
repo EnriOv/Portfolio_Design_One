@@ -71,10 +71,19 @@ body {
 
     h1 {
         @extend %main_title_font;
+        font-size: 1rem;
         grid-area: 2 / 2 / 3 / 5;
         background-color: $title_section_bg_color;
         margin: 0;
-        padding: 1.3em 1.2em 1.2em 1.7em;
+        padding: 1.3em 1.2em 1.3em 1.7em;
+    }
+
+    span {
+        font-size: 1.2rem;
+        display: block;
+        color: $subtitle_font_color;
+        font-weight: bold;
+        margin-bottom: 0.4em;
     }
 
     .information {
@@ -90,16 +99,16 @@ body {
     .degree {
         @extend %degree_title_font;
         background-color: $degree_bg_color;
-        padding: 0.3em 0;
-        width: 12em;
+        padding: 0.4em;
+        width: 14em;
     }
 
     .info_buttons {
         grid-area: 3 / 3 / 4 / 4;
         display: inline;
-        transform: translate(0, 12.8px);
+        transform: translate(0, 15px);
         backdrop-filter: blur(10px);
-        width: 10.8em;
+        width: 13.3em;
         height: 80%;
 
         li {
@@ -121,11 +130,6 @@ body {
 
         button:hover {
             background-color: rgba(177, 177, 177, 0.2);
-        }
-
-        a {
-            color: $default;
-            text-decoration: none;
         }
     }
 
@@ -163,8 +167,13 @@ body {
     /* Responsive design for galaxy fold display */
     @include responsive_galaxy_fold() {
         h1 {
-            font-size: 1rem;
+            font-size: 0.8rem;
             padding: 0.8em 1em 1.2em 1em;
+        }
+
+        span {
+            font-size: 1rem;
+            margin-bottom: 0.4em;
         }
 
         .degree {
@@ -172,9 +181,9 @@ body {
         }
 
         .info_buttons {
-            width: 10.8em;
+            width: 13.3em;
             height: 70%;
-            transform: translate(0, 12.8px);
+            transform: translate(0, 13.7px);
 
             button {
                 font-size: 0.9rem;
@@ -221,8 +230,13 @@ body {
         }
 
         h1 {
-            font-size: $main_title_tablet_font_size;
+            font-size: $main_title_tablet_font_size*0.9;
             padding: 1.3em 1.2em 1.6em 1.7em;
+        }
+
+        span {
+            font-size: $main_title_tablet_font_size;
+            margin-bottom: 0.4em;
         }
 
         .information {
@@ -281,19 +295,24 @@ body {
         h1 {
             grid-area: 2 / 2 / 3 / 4;
             font-size: $main_title_desktop_font_size;
-            padding: 1.9em 0.8em 2em 1.2em;
+            padding: 1em 0.8em 2em 1.2em;
             text-align: left;
             line-height: 1.8em;
         }
 
+        span {
+            font-size: 1.8rem;
+            margin-bottom: 0.4em;
+        }
+
         .information {
             grid-area: 3 / 2 / 4 / 3;
-            transform: translate(0, -2.5em);
+            transform: translate(1em, -2.5em);
         }
 
         .degree {
             font-size: $degree_desktop_font_size;
-            padding: 0.8em 0;
+            padding: 0.8em;
             width: 14em;
         }
 
@@ -348,21 +367,26 @@ body {
 
         h1 {
             grid-area: 2 / 2 / 3 / 4;
-            font-size: $main_title_desktop_font_size*1.3;
-            padding: 1.9em 0.8em 2em 1.2em;
+            font-size: $main_title_desktop_font_size;
+            padding: 1em 0.8em 2em 1.2em;
             text-align: left;
             line-height: 1.8em;
         }
 
+        span {
+            font-size: $main_title_desktop_font_size*1.3;
+            margin-bottom: 0.4em;
+        }
+
         .information {
             grid-area: 3 / 2 / 4 / 3;
-            transform: translate(0, -3em);
+            transform: translate(2.5em, -3em);
         }
 
         .degree {
             font-size: $degree_desktop_font_size*1.3;
-            padding: 0.8em 0;
-            width: 12em;
+            padding: 0.8em;
+            width: 14em;
         }
 
         .info_buttons {
@@ -417,21 +441,26 @@ body {
 
         h1 {
             grid-area: 2 / 2 / 3 / 4;
-            font-size: $main_title_desktop_font_size*1.5;
-            padding: 1.9em 0.8em 2em 1.2em;
+            font-size: $main_title_desktop_font_size*1.3;
+            padding: 1.2em 0.8em 2em 1.2em;
             text-align: left;
             line-height: 1.8em;
         }
 
+        span {
+            font-size: $main_title_desktop_font_size*1.5;
+            margin-bottom: 0.2em;
+        }
+
         .information {
             grid-area: 3 / 2 / 4 / 3;
-            transform: translate(0, -3.5em);
+            transform: translate(2.5em, -3.5em);
         }
 
         .degree {
             font-size: $degree_desktop_font_size*1.5;
-            padding: 0.8em 0;
-            width: 12em;
+            padding: 0.8em;
+            width: 14em;
         }
 
         .info_buttons {
@@ -530,7 +559,7 @@ body {
         .about_info {
             font-size: $subtext_desktop_font_size;
             padding-bottom: 2em;
-            margin: 0 7em;
+            margin: 0 8.5em;
         }
     }
 
@@ -626,7 +655,7 @@ body {
 
     /* Responsive design for tablet display */
     @include responsive_tablet() {
-        margin: 0 6em;
+        margin: 0 3em;
     }
 
     /* Responsive design for desktop display */
@@ -725,7 +754,6 @@ body {
     p {
         @extend %project_description_font;
         color: $project_name_font_color;
-        grid-area: info;
         display: block;
         margin: 0.5em 1em;
     }
@@ -738,38 +766,46 @@ body {
         align-self: end;
     }
 
-    ul {
+    .buttons-list {
         list-style-type: none;
         margin-bottom: 0.5em;
         padding: 0;
         overflow: hidden;
         background-color: none;
+
+        li {
+            display: inline-block;
+        }
+    
+        li a {
+            display: block;
+            color: $project_name_font_color;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 1em;
+            width: 5em;
+            border-style: solid;
+            border-width: 2px;
+        }
+    
+        li a:hover {
+            background-color: $project_name_font_color;
+            color: $default;
+            border-color: $project_name_font_color;
+        }
+    
+        li a:active {
+            background-color: $but_project_active_color;
+            border-color: $but_project_active_color;
+        }
     }
 
-    li {
-        display: inline-block;
-    }
-
-    li a {
-        display: block;
+    .bullet-info {
+        @extend %project_description_font;
         color: $project_name_font_color;
-        text-decoration: none;
-        text-align: center;
-        margin: 0 1em;
-        width: 5em;
-        border-style: solid;
-        border-width: 2px;
-    }
-
-    li a:hover {
-        background-color: $project_name_font_color;
-        color: $default;
-        border-color: $project_name_font_color;
-    }
-
-    li a:active {
-        background-color: $but_project_active_color;
-        border-color: $but_project_active_color;
+        list-style-type: square;
+        list-style-position: outside;
+        margin-right: 2em;
     }
 
     /* Responsive design for tablet display */
@@ -779,7 +815,7 @@ body {
         grid-template-rows: auto auto;
         grid-template-areas: "image info"
                              "name info";
-        margin: 1em 0;
+        margin: 1.5em 0;
         border: none;
 
         .img_project {
@@ -832,6 +868,10 @@ body {
             display: block;
             text-align: center;
             align-self: end;
+        }
+
+        .bullet-info {
+            margin: 0 3em 0 -0.6em;
         }
     }
 
@@ -904,6 +944,11 @@ body {
         ul {
             margin-bottom: 0.7em;
         }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size;
+            margin: 0 3em 0 0.6em;
+        }
     }
 
     /* Responsive design for large desktop displays */
@@ -974,6 +1019,11 @@ body {
 
         ul {
             margin-bottom: 0.7em;
+        }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size*1.3;
+            margin: 0 3em 0 0.6em;
         }
     }
 
@@ -1049,6 +1099,11 @@ body {
 
         ul {
             margin-bottom: 0.7em;
+        }
+
+        .bullet-info {
+            font-size: $project_description_desktop_font_size*1.5;
+            margin: 0 3em 0 0.6em;
         }
     }
 }
