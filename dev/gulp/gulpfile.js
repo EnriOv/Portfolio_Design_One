@@ -6,7 +6,7 @@ const imagemin = require('gulp-imagemin');
 const merge = require('merge-stream');
 
 /* Paths to destination directories */
-const dir_dist    = "../../root";
+const dir_dist    = "../../docs";
 const dir_imgs    = dir_dist + "/img"
 const dir_css     = dir_dist + "/css"
 const dir_css_dev = "../css";
