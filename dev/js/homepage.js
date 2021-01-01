@@ -64,6 +64,6 @@ $(document).ready(function(){
     });
 
     $(".resume").click(function() {
-        window.open("//#endregion");
+        window.open("https://drive.google.com/file/d/12jTfel6Lj9h6g1y3WC2eJ7-4vQB15H_g/view?usp=sharing");
     });
 });
